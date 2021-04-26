@@ -1,0 +1,18 @@
+.bg-danger{
+    background-color: #8f0303 !important;
+    color: #fff;
+}
+.bg-warning{
+    background-color: #9b8300 !important;
+    color: #fff;
+}
+.btn-danger{
+    background-color: #8f0303 !important;
+    color: #fff;
+    border: #8f0303;
+}
+.btn-warning{
+    background-color: #9b8300 !important;
+    color: #fff;
+    border: #8f0303;
+}

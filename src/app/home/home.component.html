@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="container">
+
+    <div class="row justify-content-center mt-5">
+      <div class="col-sm-12 col-md-2 bg-blue-dark rounded">
+        <div class=" text-center text-white">
+       
+          <ul class="list-unstyled text-left" >
+            <li class="mb-3 mt-4">        
+                  <h4>MENU</h4>
+            </li>
+            <li>
+              <a class="text-white btn-sm"  routerLinkActive="btn-orange" routerLink="/home/my-routines">
+                ROUTINES
+              </a>
+            </li>
+            <li>
+              <a class="text-white btn-sm" routerLinkActive="btn-orange" routerLink="/home/exercises">
+                EXERCISES 
+              </a>
+            </li>
+            <li>
+              <a class="text-white btn-sm" routerLinkActive="btn-orange" routerLink="/home/parks">
+                PARKS 
+              </a>
+            </li>
+            <li>
+              <a class="text-white btn mb-2 btn-sm"  routerLink="/">
+                INDEX
+              </a>
+            </li>
+          
+          </ul>
+        </div>
+      </div>
+      <div id="home" class="col-sm-12 col-md-10 bg-blue text-white rounded pb-5">
+        <h2 class="display-3 mt-2">
+          TRAINING
+        </h2>
+        <router-outlet>
+  
+        </router-outlet>
+        <a (click)="topFunction()" class="btn-flotante">Go head</a>
+  
+      </div>
+    </div>
+  </div>
+</div>
+

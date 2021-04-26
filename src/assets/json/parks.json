@@ -1,0 +1,48 @@
+[
+    {
+        "id":1,
+        "name": "Parque Reebok Street Workout",
+        "city": "Recoleta",
+        "region":"Region Metropolitana",
+        "urlDirection":"https://www.google.com/search?q=Parque%20Reebok%20Street%20Workout&oq=Parque+Reebok+Street+Workout&aqs=edge..69i57j0i22i30.535j0j1&sourceid=chrome&ie=UTF-8&tbs=lf:1,lf_ui:2&tbm=lcl&sxsrf=ALeKk01MLLuHUf7udpPdgaeoxB8CRvuIqg:1619216077387&rflfq=1&num=10&rldimm=13173430216657502105&lqi=ChxQYXJxdWUgUmVlYm9rIFN0cmVldCBXb3Jrb3V0WjwKHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXQiHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXSSAQNneW0&ved=2ahUKEwjumO34sZXwAhU4qpUCHdOKAn8QvS4wAHoECAUQHg&rlst=f#rlfi=hd:;si:13173430216657502105,l,ChxQYXJxdWUgUmVlYm9rIFN0cmVldCBXb3Jrb3V0WjwKHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXQiHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXSSAQNneW0;mv:[[-33.3635805,-70.57718120000001],[-33.435893899999996,-70.69920549999999]];tbs:lrf:!1m4!1u2!2m2!2m1!1e1!2m1!1e2!3sIAE,lf:1,lf_ui:2"
+    },
+    {
+        "id":2,
+        "name": "Parque Santa Mónica",
+        "city": "Huechuraba",
+        "region":"Region Metropolitana",
+        "urlDirection":"https://www.google.com/search?q=Parque%20Reebok%20Street%20Workout&oq=Parque+Reebok+Street+Workout&aqs=edge..69i57j0i22i30.535j0j1&sourceid=chrome&ie=UTF-8&tbs=lf:1,lf_ui:2&tbm=lcl&sxsrf=ALeKk01MLLuHUf7udpPdgaeoxB8CRvuIqg:1619216077387&rflfq=1&num=10&rldimm=13173430216657502105&lqi=ChxQYXJxdWUgUmVlYm9rIFN0cmVldCBXb3Jrb3V0WjwKHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXQiHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXSSAQNneW0&ved=2ahUKEwjumO34sZXwAhU4qpUCHdOKAn8QvS4wAHoECAUQHg&rlst=f#rlfi=hd:;si:13173430216657502105,l,ChxQYXJxdWUgUmVlYm9rIFN0cmVldCBXb3Jrb3V0WjwKHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXQiHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXSSAQNneW0;mv:[[-33.3635805,-70.57718120000001],[-33.435893899999996,-70.69920549999999]];tbs:lrf:!1m4!1u2!2m2!2m1!1e1!2m1!1e2!3sIAE,lf:1,lf_ui:2"
+
+    },
+    {
+        "id":3,
+        "name": "Barras Cerro San Cristobal",
+        "city": "Recoleta",
+        "region":"Region Metropolitana",
+        "urlDirection":"https://www.google.com/search?q=Parque%20Reebok%20Street%20Workout&oq=Parque+Reebok+Street+Workout&aqs=edge..69i57j0i22i30.535j0j1&sourceid=chrome&ie=UTF-8&tbs=lf:1,lf_ui:2&tbm=lcl&sxsrf=ALeKk01MLLuHUf7udpPdgaeoxB8CRvuIqg:1619216077387&rflfq=1&num=10&rldimm=13173430216657502105&lqi=ChxQYXJxdWUgUmVlYm9rIFN0cmVldCBXb3Jrb3V0WjwKHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXQiHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXSSAQNneW0&ved=2ahUKEwjumO34sZXwAhU4qpUCHdOKAn8QvS4wAHoECAUQHg&rlst=f#rlfi=hd:;si:13173430216657502105,l,ChxQYXJxdWUgUmVlYm9rIFN0cmVldCBXb3Jrb3V0WjwKHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXQiHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXSSAQNneW0;mv:[[-33.3635805,-70.57718120000001],[-33.435893899999996,-70.69920549999999]];tbs:lrf:!1m4!1u2!2m2!2m1!1e1!2m1!1e2!3sIAE,lf:1,lf_ui:2"
+    },
+    {
+        "id":4,
+        "name": "Parque mapoco calistenia",
+        "city": "Estacion Central",
+        "region":"Region Metropolitana",
+        "urlDirection":"https://www.google.com/search?q=Parque%20Reebok%20Street%20Workout&oq=Parque+Reebok+Street+Workout&aqs=edge..69i57j0i22i30.535j0j1&sourceid=chrome&ie=UTF-8&tbs=lf:1,lf_ui:2&tbm=lcl&sxsrf=ALeKk01MLLuHUf7udpPdgaeoxB8CRvuIqg:1619216077387&rflfq=1&num=10&rldimm=13173430216657502105&lqi=ChxQYXJxdWUgUmVlYm9rIFN0cmVldCBXb3Jrb3V0WjwKHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXQiHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXSSAQNneW0&ved=2ahUKEwjumO34sZXwAhU4qpUCHdOKAn8QvS4wAHoECAUQHg&rlst=f#rlfi=hd:;si:13173430216657502105,l,ChxQYXJxdWUgUmVlYm9rIFN0cmVldCBXb3Jrb3V0WjwKHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXQiHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXSSAQNneW0;mv:[[-33.3635805,-70.57718120000001],[-33.435893899999996,-70.69920549999999]];tbs:lrf:!1m4!1u2!2m2!2m1!1e1!2m1!1e2!3sIAE,lf:1,lf_ui:2"
+
+    },
+    {
+        "id":3,
+        "name": "Parque mapoco calistenia",
+        "city": "Estacion Central",
+        "region":"Region Metropolitana",
+        "urlDirection":"https://www.google.com/search?q=Parque%20Reebok%20Street%20Workout&oq=Parque+Reebok+Street+Workout&aqs=edge..69i57j0i22i30.535j0j1&sourceid=chrome&ie=UTF-8&tbs=lf:1,lf_ui:2&tbm=lcl&sxsrf=ALeKk01MLLuHUf7udpPdgaeoxB8CRvuIqg:1619216077387&rflfq=1&num=10&rldimm=13173430216657502105&lqi=ChxQYXJxdWUgUmVlYm9rIFN0cmVldCBXb3Jrb3V0WjwKHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXQiHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXSSAQNneW0&ved=2ahUKEwjumO34sZXwAhU4qpUCHdOKAn8QvS4wAHoECAUQHg&rlst=f#rlfi=hd:;si:13173430216657502105,l,ChxQYXJxdWUgUmVlYm9rIFN0cmVldCBXb3Jrb3V0WjwKHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXQiHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXSSAQNneW0;mv:[[-33.3635805,-70.57718120000001],[-33.435893899999996,-70.69920549999999]];tbs:lrf:!1m4!1u2!2m2!2m1!1e1!2m1!1e2!3sIAE,lf:1,lf_ui:2"
+
+    },
+    {
+        "id":2,
+        "name": "Parque mapoco calistenia",
+        "city": "Estacion Central",
+        "region":"Region Metropolitana",
+        "urlDirection":"https://www.google.com/search?q=Parque%20Reebok%20Street%20Workout&oq=Parque+Reebok+Street+Workout&aqs=edge..69i57j0i22i30.535j0j1&sourceid=chrome&ie=UTF-8&tbs=lf:1,lf_ui:2&tbm=lcl&sxsrf=ALeKk01MLLuHUf7udpPdgaeoxB8CRvuIqg:1619216077387&rflfq=1&num=10&rldimm=13173430216657502105&lqi=ChxQYXJxdWUgUmVlYm9rIFN0cmVldCBXb3Jrb3V0WjwKHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXQiHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXSSAQNneW0&ved=2ahUKEwjumO34sZXwAhU4qpUCHdOKAn8QvS4wAHoECAUQHg&rlst=f#rlfi=hd:;si:13173430216657502105,l,ChxQYXJxdWUgUmVlYm9rIFN0cmVldCBXb3Jrb3V0WjwKHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXQiHHBhcnF1ZSByZWVib2sgc3RyZWV0IHdvcmtvdXSSAQNneW0;mv:[[-33.3635805,-70.57718120000001],[-33.435893899999996,-70.69920549999999]];tbs:lrf:!1m4!1u2!2m2!2m1!1e1!2m1!1e2!3sIAE,lf:1,lf_ui:2"
+
+    }
+]

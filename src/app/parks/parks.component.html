@@ -1,0 +1,30 @@
+<h4 class="mb-3 display-6">CALISTHENICS PARKS IN CHILE</h4>
+<div class="row">
+  <div
+    *ngFor="let park of parksList"
+    class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3"
+  >
+    <img
+      src="../../assets/img/park/{{ park.id }}.jpg"
+      class="card-img-top"
+      alt="..."
+    />
+    <div class="card-body bg-blue-dark">
+      <h5 class="card-title text-orange">{{ park.name }}</h5>
+      <p class="card-text text-white">
+        <span><strong>PARK:</strong></span>
+        {{ park.name }}
+        <br />
+        <span><strong>CITY:</strong></span>
+        {{ park.city }}
+        <br />
+        <span><strong>REGION:</strong></span>
+        {{ park.region }}
+        <br />
+      </p>
+      <a href="{{ park.urlDirection }}" target="_blank" class="btn-sm btn-orange">
+        MAP
+      </a>
+    </div>
+  </div>
+</div>

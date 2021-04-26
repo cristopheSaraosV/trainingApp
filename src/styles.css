@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+
+.bg-blue-dark{
+    background-color:#222831
+}
+.bg-blue{
+    background-color:#30475e
+}
+.text-blue{
+    color:#30475e
+}
+
+.text-white{
+    color:#dddddd  !important;
+}
+.text-orange{
+    color:#f05454
+}
+
+.btn-orange{
+    background-color: #f05454 ;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+    color: #dddddd;
+    text-align: center;
+    vertical-align: middle;    
+}
+.btn-orange:hover{
+    text-decoration: none;
+    font-weight: 900;
+    color: #dddddd;
+   
+}
+
+.btn-sm{
+
+    border: 10px 20px 10px 20px !important;
+    padding: 10px 20px 10px 20px !important;
+    font-size:15px !important;
+    text-decoration: none;
+    display: inline-block;
+}
+.btn-sm:hover{
+    text-decoration: none;
+    font-weight: 400;
+    color: #dddddd;
+   
+}
+
+.bg-background{
+    background-color:#1a1a1a
+}
+
+
+
+
+/* Colors
+#dddddd
+#222831 
+#30475e
+#f05454 
+*/
