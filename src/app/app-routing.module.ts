@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component'
 import { IndexComponent } from './index/index.component'
 import { ParksComponent } from './parks/parks.component'
 import { RoutinesComponent } from './routines/routines.component'
+import { HomeRoutinesComponent } from './home-routines/home-routines.component'
+import { CustomRoutineComponent } from './custom-routine/custom-routine.component'
 
 const routes: Routes = [
   {
@@ -16,8 +18,24 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       { 
-        path: 'my-routines',
+        path: 'trainer',
+        component: HomeRoutinesComponent   
+      },      
+      { 
+        path: 'presentRoutine',
+        component: ExercisesComponent 
+      },
+      { 
+        path: 'customRoutine',
         component: RoutinesComponent 
+      },
+      { 
+        path: 'routines',
+        component: RoutinesComponent 
+      },
+      { 
+        path: 'routinesCustom',
+        component: CustomRoutineComponent 
       },
       { 
         path: 'exercises',

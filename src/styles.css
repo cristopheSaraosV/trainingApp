@@ -6,6 +6,9 @@
 .bg-blue{
     background-color:#30475e
 }
+.bg-orange{
+    background-color:#f05454
+}
 .text-blue{
     color:#30475e
 }
@@ -52,7 +55,10 @@
     background-color:#1a1a1a
 }
 
-
+.hr-style{
+    background-color:#f05454;
+    width:30%;
+}
 
 
 /* Colors

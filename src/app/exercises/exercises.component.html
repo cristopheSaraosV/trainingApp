@@ -1,21 +1,29 @@
 <h4 id="exercisesHome" class="mb-3 display-6">LIST EXERCISES</h4>
 
-<div
-  id="exercisesHome"
-  class="container pr-5"
-  *ngFor="let exercise of exercisesList"
->
-  <hr class="bg-danger" width="30%" />
-  <p>
-    <span class="text-orange"><strong>EXERCISE:</strong></span>
-    {{ exercise.name }}
-    <br />
-    <span class="text-orange"><strong>DETAIL:</strong></span>
-    {{ exercise.description }}
-    <br />
-  </p>
-  <div class="text-center px-5">
-    <img class="figure container mt-3 p-5" src="{{ exercise.url }}" alt="" />
+
+<div class="row">
+  <div
+    *ngFor="let exercise of exercisesList"
+    class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-3 "
+    >
+    <div class="card-body bg-blue-dark rounded">
+    <div class="text-left px-5 pb-4">
+  
+      <img
+      src="../../assets/img/exercise/{{exercise.name}}.png"
+      class=" mb-3 img-fluid"
+      alt="..."
+    />
+    <p>
+      <span class="text-orange"><strong>EXERCISE:</strong></span>
+      {{ exercise.name }}
+      <br />
+      <span class="text-orange"><strong>DETAIL:</strong></span>
+      {{ exercise.description }}
+      <br />
+    </p>
+
+  </div>
+
   </div>
 </div>
-

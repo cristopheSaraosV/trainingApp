@@ -1,0 +1,22 @@
+[
+    {
+        "exercise":"Abs",
+        "reps":5,
+        "break":30
+    },
+    {
+        "exercise":"SQUAT ON WAL",
+        "reps":5,
+        "break":30
+    },
+    {
+        "exercise":"STAR JUMP",
+        "reps":5,
+        "break":30
+    },
+    {
+        "exercise":"PUSH-UPS",
+        "reps":5,
+        "break":30
+    }
+]

@@ -9,6 +9,8 @@ import { ExercisesComponent } from './exercises/exercises.component';
 import { FormsModule } from '@angular/forms';
 import { IndexComponent } from './index/index.component';
 import { ParksComponent } from './parks/parks.component';
+import { HomeRoutinesComponent } from './home-routines/home-routines.component';
+import { CustomRoutineComponent } from './custom-routine/custom-routine.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ParksComponent } from './parks/parks.component';
     RoutinesComponent,
     ExercisesComponent,
     IndexComponent,
-    ParksComponent
+    ParksComponent,
+    HomeRoutinesComponent,
+    CustomRoutineComponent
   ],
   imports: [
     BrowserModule,
