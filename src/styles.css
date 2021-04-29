@@ -24,36 +24,33 @@
     background-color: #f05454 ;
     text-decoration: none;
     display: inline-block;
-    font-weight: 500;
     color: #dddddd;
     text-align: center;
     vertical-align: middle;    
     border:none;
 }
-.btn-blue:hover{
+.btn-orange:hover{
     text-decoration: none;
-    font-weight: 900;
-    color: #dddddd;    
-    border:none;
+    background-color: #ad3b3b ;
 
+    color: #dddddd;
+    border:none;
    
 }
 .btn-blue{
     background-color: #30475e ;
     text-decoration: none;
     display: inline-block;
-    font-weight: 500;
     color: #dddddd;
     text-align: center;
     vertical-align: middle;   
     border:none; 
 }
-.btn-orange:hover{
+.btn-blue:hover{
+    background-color: #1a2733 ;
     text-decoration: none;
-    font-weight: 900;
-    color: #dddddd;
-    border:none;
-   
+    color: #dddddd;    
+    border:none;   
 }
 
 .btn-sm{
