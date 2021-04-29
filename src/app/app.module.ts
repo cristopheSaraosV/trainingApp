@@ -11,6 +11,7 @@ import { IndexComponent } from './index/index.component';
 import { ParksComponent } from './parks/parks.component';
 import { HomeRoutinesComponent } from './home-routines/home-routines.component';
 import { CustomRoutineComponent } from './custom-routine/custom-routine.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,11 +24,14 @@ import { CustomRoutineComponent } from './custom-routine/custom-routine.componen
     HomeRoutinesComponent,
     CustomRoutineComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports:[
+    [
+      BrowserModule,  
+      AppRoutingModule,
+      ReactiveFormsModule
+    ],
+    FormsModule  
+  ] ,
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,52 +1,99 @@
-
-
 <div class="text-left text-white ms-3 pe-3 mb-5">
-    <hr class="hr-style" />
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="text-secondary mb-4">
-          <div class="card-body bg-blue-dark text-white">    
-            
-            <div class="row">
-                <div class="col-sm-12 ">
-                    <div class="mb-2">
-                        <h2>BEGINNER</h2>
-                    </div>
+  <hr class="hr-style" />
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-secondary mb-4">
+        <div class="card-body bg-blue-dark text-white">
+          <div class="row">
+            <form [formGroup]="exerciseFormGroup" (ngSubmit)="onSubmit()"  class="col-sm-12 col-md-5 col-lg-6"
+            >
+              <div class="col-sm-12 ">
+                <div class="mb-3">
+                  <label for="selecteExercise">EXERCISE</label>
+                  <select
+                    id="selecteExercise"
+                    class="form-select"
+                    aria-label="Default select example"
+                    formControlName="exerciseName"
+                  >
+                    <option
+                      *ngFor="let exercise of exercisesList"
+                      value="{{ exercise.name }}"
+                    >
+                      {{ exercise.name }}
+                    </option>
+                  </select>
+                  <label for="customRange1" class="form-label mt-4 mb-2">
+                    REPS {{ exerciseFormGroup.controls['reps'].value }}
+                  </label>
+                  <input
+                    type="range"
+                    class="form-range"
+                    min="0"
+                    max="20"
+                    formControlName="reps"
+                    id="reps"
+                  />
+                  BREAK {{ exerciseFormGroup.controls['break'].value }} SECONDS
+                  <input
+                    type="range"
+                    class="form-range"
+                    min="0"
+                    max="60"
+                    formControlName="break"
+                    id="break"
+                  />
+
+                  <a
+                    type="button"
+                    (click)="addExercise()"
+                    class="btn-sm btn-blue mt-2 mb-2"
+                  >
+                    ADD
+                  </a>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                    <div class="mb-2">
-                        <h5> ABS <span class="badge bg-orange">15 reps</span></h5>
-                        <p> BREAK 60 s</p>
+              </div>
+              <button type="submit" class="btn-sm btn-orange mt-2">
+                START
+              </button>
+            </form>
+            <div class="col-sm-12 col-md-6">
+              <div class="text-left text-white mb-5">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="text-secondary mb-4">
+                      <div class="card-body bg-blue-dark text-white">
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <div class="mb-2">
+                              <h2>My plans</h2>
+                            </div>
+                          </div>
+                          <div
+                            *ngFor="let routine of myRoutine"
+                            class="col-sm-12 col-md-6 col-lg-6"
+                          >
+                            <div class="mb-2">
+                              <h5>
+                                <a class="badge bg-dark me-2">&#10006;</a>
+                                {{ routine.exercise }}
+                                <span class="badge bg-orange">
+                                  {{ routine.reps }} reps
+                                </span>
+                              </h5>
+                              <p>BREAK {{ routine.break }} S</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                    <div class="mb-2">
-                        <h5>STAR JUMP <span class="badge bg-orange">15 reps</span></h5>
-                        <p> BREAK 60 s</p>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                    <div class="mb-2">
-                        <h5>SQUAT ON WALL <span class="badge bg-orange">15 reps</span></h5>
-                        <p> BREAK 60 s</p>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                    <div class="mb-2">
-                        <h5>SQUAT ON WALL <span class="badge bg-orange">15 reps</span></h5>
-                        <p> BREAK 60 s</p>
-                    </div>
-                </div>
-                
-              
+              </div>
             </div>
-            <hr class="hr-style" />
-            <a routerLink="/home/routines"  class="btn-sm btn-orange mt-2 ">START</a>
           </div>
         </div>
       </div>
-     
-
     </div>
-
   </div>
+</div>
