@@ -1,4 +1,4 @@
-<div class="text-left text-white ms-3 pe-3 mb-5">
+<div  *ngIf="!trainingRoomStatus" class="text-left text-white ms-3 pe-3 mb-5">
   <hr class="hr-style" />
   <div class="row">
     <div class="col-sm-12">
@@ -97,3 +97,13 @@
     </div>
   </div>
 </div>
+
+<a
+type="button"
+(click)="showRoutinesCustom()"
+class="btn-sm btn-orange mt-2 mb-2"
+*ngIf="trainingRoomStatus"
+>
+BACK
+</a>
+<router-outlet *ngIf="trainingRoomStatus"></router-outlet>

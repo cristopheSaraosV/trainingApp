@@ -12,6 +12,7 @@ import { ParksComponent } from './parks/parks.component';
 import { HomeRoutinesComponent } from './home-routines/home-routines.component';
 import { CustomRoutineComponent } from './custom-routine/custom-routine.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TrainingRoomComponent } from './training-room/training-room.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     IndexComponent,
     ParksComponent,
     HomeRoutinesComponent,
-    CustomRoutineComponent
+    CustomRoutineComponent,
+    TrainingRoomComponent
   ],
   imports:[
     [

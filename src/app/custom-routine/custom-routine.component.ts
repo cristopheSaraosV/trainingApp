@@ -25,6 +25,8 @@ export class CustomRoutineComponent implements OnInit {
 
   myRoutine: Array<MyRoutine> = []
 
+  trainingRoomStatus:boolean = true;
+  
   exerciseFormGroup = new FormGroup({
     reps: new FormControl(''),
     break: new FormControl(''),
@@ -41,8 +43,12 @@ export class CustomRoutineComponent implements OnInit {
 
   onSubmit() {
     console.log(this.myRoutine)
+    this.trainingRoomStatus=true
   }
+  showRoutinesCustom(){
+    this.trainingRoomStatus=false
 
+  }
   addExercise() {
 
 
