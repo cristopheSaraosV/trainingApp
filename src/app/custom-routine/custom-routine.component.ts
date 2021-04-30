@@ -19,7 +19,7 @@ export class CustomRoutineComponent implements OnInit {
 
 	exerciseFormGroup = new FormGroup({
 		reps: new FormControl(""),
-		break: new FormControl(""),
+		timeRemaining: new FormControl(""),
 		exerciseName: new FormControl(""),
 	});
 
@@ -27,7 +27,7 @@ export class CustomRoutineComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.exerciseFormGroup.controls["reps"].setValue(6);
-		this.exerciseFormGroup.controls["break"].setValue(30);
+		this.exerciseFormGroup.controls["timeRemaining"].setValue(30);
 		this.exerciseFormGroup.controls["exerciseName"].setValue("PUSH-UPS");
 	}
 
@@ -45,7 +45,7 @@ export class CustomRoutineComponent implements OnInit {
 		this.myRoutine.push({
 			exercise: this.exerciseFormGroup.controls["exerciseName"].value,
 			reps: this.exerciseFormGroup.controls["reps"].value,
-			break: this.exerciseFormGroup.controls["break"].value,
+			timeRemaining: this.exerciseFormGroup.controls["timeRemaining"].value,
 		});
 	}
 

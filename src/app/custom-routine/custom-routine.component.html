@@ -34,14 +34,14 @@
                     formControlName="reps"
                     id="reps"
                   />
-                  BREAK {{ exerciseFormGroup.controls['break'].value }} SECONDS
+                  TIME REMAINING: {{ exerciseFormGroup.controls['timeRemaining'].value }} SECONDS
                   <input
                     type="range"
                     class="form-range"
                     min="0"
                     max="60"
-                    formControlName="break"
-                    id="break"
+                    formControlName="timeRemaining"
+                    id="timeRemaining"
                   />
 
                   <a
@@ -81,7 +81,7 @@
                                   {{ routine.reps }} reps
                                 </span>
                               </h5>
-                              <p>BREAK {{ routine.break }} S</p>
+                              <p>BREAK {{ routine.timeRemaining }} S</p>
                             </div>
                           </div>
                         </div>
