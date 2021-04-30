@@ -1,14 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import * as parksJson from '../../assets/json/parks.json'
+import { Park } from '../models/park'
 
-interface Park {
-  id: number
-  name: string,
-  city:  string,
-  region:  string,
-  url:  string,
-  urlDirection:  string,
-}
+
 
 @Component({
   selector: 'app-parks',

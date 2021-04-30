@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import * as exercisesJson from '../../assets/json/exercises.json'
-
-interface Exercise {
-  name: string
-  description: string
-  id: number,
-  url: string
-}
+import { Exercise } from '../models/exercise'
 
 @Component({
   selector: 'app-exercises',

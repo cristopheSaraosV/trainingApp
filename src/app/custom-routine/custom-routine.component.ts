@@ -1,62 +1,53 @@
-import { Component, OnInit } from '@angular/core'
-import * as exercisesJson from '../../assets/json/exercises.json'
-import { FormControl, FormGroup } from '@angular/forms'
-
-interface Exercise {
-  name: string
-  description: string
-  id: number
-  url: string
-}
-
-interface MyRoutine {
-  exercise: string
-  reps: number
-  break: number
-}
+import { Component, OnInit } from "@angular/core";
+import * as exercisesJson from "../../assets/json/exercises.json";
+import { FormControl, FormGroup } from "@angular/forms";
+import { MyRoutine } from "../models/routineCustom";
+import { Exercise } from "../models/exercise";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-custom-routine',
-  templateUrl: './custom-routine.component.html',
-  styleUrls: ['./custom-routine.component.css'],
+	selector: "app-custom-routine",
+	templateUrl: "./custom-routine.component.html",
+	styleUrls: ["./custom-routine.component.css"],
 })
 export class CustomRoutineComponent implements OnInit {
-  exercisesList: Array<Exercise> = (exercisesJson as any).default
+	exercisesList: Array<Exercise> = (exercisesJson as any).default;
 
-  myRoutine: Array<MyRoutine> = []
+	myRoutine: Array<MyRoutine> = [];
 
-  trainingRoomStatus:boolean = true;
-  
-  exerciseFormGroup = new FormGroup({
-    reps: new FormControl(''),
-    break: new FormControl(''),
-    exerciseName: new FormControl(''),
-  })
+	trainingRoomStatus: boolean = false;
 
-  constructor() {}
+	exerciseFormGroup = new FormGroup({
+		reps: new FormControl(""),
+		break: new FormControl(""),
+		exerciseName: new FormControl(""),
+	});
 
-  ngOnInit(): void {
-    this.exerciseFormGroup.controls['reps'].setValue('6')
-    this.exerciseFormGroup.controls['break'].setValue('30')
-    this.exerciseFormGroup.controls['exerciseName'].setValue("PUSH-UPS")
-  }
+	constructor(private router: Router) {}
 
-  onSubmit() {
-    console.log(this.myRoutine)
-    this.trainingRoomStatus=true
-  }
-  showRoutinesCustom(){
-    this.trainingRoomStatus=false
+	ngOnInit(): void {
+		this.exerciseFormGroup.controls["reps"].setValue(6);
+		this.exerciseFormGroup.controls["break"].setValue(30);
+		this.exerciseFormGroup.controls["exerciseName"].setValue("PUSH-UPS");
+	}
 
-  }
-  addExercise() {
+	onSubmit() {
+		this.trainingRoomStatus = true;
+		this.router.navigate([
+			"home/routinesCustom/trainingRoom/",
+			{ myRoutine: JSON.stringify(this.myRoutine) },
+		]);
+	}
+	showRoutinesCustom() {
+		this.trainingRoomStatus = false;
+	}
+	addExercise() {
+		this.myRoutine.push({
+			exercise: this.exerciseFormGroup.controls["exerciseName"].value,
+			reps: this.exerciseFormGroup.controls["reps"].value,
+			break: this.exerciseFormGroup.controls["break"].value,
+		});
+	}
 
-
-
-    this.myRoutine.push({
-      exercise: this.exerciseFormGroup.controls['exerciseName'].value,
-      reps: this.exerciseFormGroup.controls['reps'].value,
-      break: this.exerciseFormGroup.controls['break'].value,
-    })
-  }
+	sendRoutine() {}
 }
