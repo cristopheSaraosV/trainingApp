@@ -1,30 +1,43 @@
 <h4 class="mb-3 display-6">CALISTHENICS PARKS IN CHILE</h4>
 <div class="row">
-  <div
-    *ngFor="let park of parksList"
-    class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3"
-  >
-    <img
-      src="../../assets/img/park/{{ park.id }}.jpg"
-      class="card-img-top"
-      alt="..."
-    />
-    <div class="card-body bg-blue-dark">
-      <h5 class="card-title text-orange">{{ park.name }}</h5>
-      <p class="card-text text-white">
-        <span><strong>PARK:</strong></span>
-        {{ park.name }}
-        <br />
-        <span><strong>CITY:</strong></span>
-        {{ park.city }}
-        <br />
-        <span><strong>REGION:</strong></span>
-        {{ park.region }}
-        <br />
-      </p>
-      <a href="{{ park.urlDirection }}" target="_blank" class="btn-sm btn-orange">
-        MAP
-      </a>
-    </div>
-  </div>
+	<div *ngFor="let park of parksList" class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3 h-90">
+		<div class="h-90 card">
+			<img
+				src="../../assets/img/park/{{ park.id }}.jpg"
+				class="card-img-top"
+				alt="..."
+			/>
+			<div class="card-body bg-blue-dark uppercase">
+				<h5 class="card-title text-orange">{{ park.name }}</h5>
+				<p class="card-text text-white">
+					<span><strong class="text-cian">PARK:</strong></span>
+					{{ park.name }}
+					<br />
+					<span><strong class="text-cian">CITY:</strong></span>
+					{{ park.city }}
+					<br />
+					<span><strong class="text-cian">REGION:</strong></span>
+					{{ park.region }}
+					<br />
+				</p>
+			       
+				<div class="mt-3 mb-4">
+					<div class="row justify-content-md-left">
+            <div class="col-sm-12 col-md-6 ">
+              <h5>Weather in {{ park.city }} <span class='text-cian'> 26°c</span></h5>
+            </div>
+						<div class="col-sm-12 col-md-3">
+							<i
+								style="font-size: 2.3em; color: cornflowerblue;"
+								class="bi bi-brightness-alt-high"
+							></i>
+						</div>
+					</div>
+				</div>
+        <a href="{{ park.urlDirection }}" target="_blank" class="btn-sm btn-orange">
+					GO
+				</a>
+			</div>
+		</div>
+	</div>
 </div>

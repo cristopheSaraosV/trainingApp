@@ -16,10 +16,22 @@
 .text-white{
     color:#dddddd  !important;
 }
+.text-cian{
+    color:#5d9feb  !important;
+}
 .text-orange{
     color:#f05454
 }
+.h-90{
+    height:38em;
+}
+.card{
+    border: none!important;
+}
 
+.uppercase{
+    text-transform: uppercase;
+}
 .btn-orange{
     background-color: #f05454 ;
     text-decoration: none;
@@ -84,3 +96,9 @@
 #30475e
 #f05454 
 */
+
+@media screen and (max-width: 1655px) {
+    .mt-5 { 
+        margin-top: none !important
+    }
+}

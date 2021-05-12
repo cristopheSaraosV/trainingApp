@@ -1,4 +1,4 @@
-export interface Exercise {
+export class Exercise {
     name: string
     description: string
     id: number

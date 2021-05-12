@@ -10,6 +10,7 @@ import { MyRoutine } from "../models/routineCustom";
 export class TrainingRoomComponent implements OnInit {
 	statusTraining: boolean = false;
 	myRoutineArray: Array<MyRoutine>;
+
 	myRoutine: MyRoutine = {
 		timeRemaining: 0,
 		exercise: "",
@@ -17,42 +18,40 @@ export class TrainingRoomComponent implements OnInit {
 	};
 
 	previousTraining: number = 5;
-	totalTime: number = 0;
 	break: number = 10;
-
+	count: number = 1;
 	constructor(private activatedRoute: ActivatedRoute) {}
 
 	ngOnInit(): void {
 		this.myRoutineArray = JSON.parse(this.activatedRoute.snapshot.params.myRoutine);
 	}
 
+
+
 	startRoutine() {
 		this.changeRoutineState();
+
+		const countDownPrevious = setInterval(() => {
+			this.previousTraining--;
+			if (this.previousTraining <= 0 || this.previousTraining < 1) {
+				clearInterval(countDownPrevious);
+			}
+		}, 1000);
 
 		this.myRoutine.timeRemaining = this.myRoutineArray[0].timeRemaining;
 		this.myRoutine.exercise = this.myRoutineArray[0].exercise;
 		this.myRoutine.reps = this.myRoutineArray[0].reps;
 
-		this.myRoutineArray.map((myRoutineItem) => {
-			let timeExercise = parseInt(myRoutineItem.timeRemaining.toString());
-			this.totalTime = this.totalTime + timeExercise + this.break;
-		});
 
-		const countdown = setInterval(() => {
-			this.previousTraining--;
-			if (this.previousTraining <= 0 || this.previousTraining < 1) {
-				clearInterval(countdown);
-				const countDownTraining = setInterval(() => {
-					this.myRoutine.timeRemaining--;
-					if (
-						this.myRoutine.timeRemaining <= 0 ||
-						this.myRoutine.timeRemaining < 1
-					) {
-						clearInterval(countDownTraining);
-					}
-				}, 1000);
+		const countDownTraining = setInterval(() => {
+			this.break--;
+			if (this.break <= 0 || this.break < 1) {
+				clearInterval(countDownTraining);
+				this.count++;
 			}
 		}, 1000);
+
+		
 	}
 
 	nextExercise() {}
@@ -61,3 +60,5 @@ export class TrainingRoomComponent implements OnInit {
 		this.statusTraining = !this.statusTraining;
 	}
 }
+
+

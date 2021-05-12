@@ -13,6 +13,9 @@ import { HomeRoutinesComponent } from './home-routines/home-routines.component';
 import { CustomRoutineComponent } from './custom-routine/custom-routine.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TrainingRoomComponent } from './training-room/training-room.component';
+import { HttpClientModule } from '@angular/common/http'
+import { ParkService } from './services/park/park.service';
+import { ExerciseService } from './services/exercise/exercise.service';
 
 @NgModule({
   declarations: [
@@ -30,11 +33,15 @@ import { TrainingRoomComponent } from './training-room/training-room.component';
     [
       BrowserModule,  
       AppRoutingModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      HttpClientModule
     ],
     FormsModule  
   ] ,
-  providers: [],
+  providers: [
+    ParkService,
+    ExerciseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
