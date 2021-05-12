@@ -5,6 +5,8 @@ export class Park {
     region:  string;
     url:  string;
     urlDirection:  string;
+    weather:string;
+    temp:number;
 
    
   }

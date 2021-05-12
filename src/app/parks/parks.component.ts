@@ -17,7 +17,9 @@ export class ParksComponent implements OnInit {
   constructor(private ParkApi:ParkService) {}
 
   ngOnInit(): void {
+    
     this.ParkApi.getParkAll().subscribe((parksListApi) =>{
+      console.log(this.parksList);
       this.parksList = parksListApi
     })
   }

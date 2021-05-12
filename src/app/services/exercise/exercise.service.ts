@@ -12,7 +12,7 @@ export class ExerciseService {
 
   getExerciseAll() : Observable<Exercise[]> {
     var local:string,production:string;    
-    local = "/api/v1/exercise/all"
+    local = "/api/exercises"
     production = "https://api-res-training-app.herokuapp.com/api/exercises"
     return this.http.get<Exercise[]>(production);
   }

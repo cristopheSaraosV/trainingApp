@@ -12,7 +12,7 @@ export class ParkService {
 
 	getParkAll() : Observable<Park[]> {
 		var local:string,production:string;    
-		local = "/api/v1/exercise/all"
+		local = "/api/parks"
 		production = "https://api-res-training-app.herokuapp.com/api/parks"
 		return this.http.get<Park[]>(production);
 	}
