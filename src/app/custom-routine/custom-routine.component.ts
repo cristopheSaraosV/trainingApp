@@ -1,9 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import * as exercisesJson from "../../assets/json/exercises.json";
+// import * as exercisesJson from "../../assets/json/exercises.json";
 import { FormControl, FormGroup } from "@angular/forms";
 import { MyRoutine } from "../models/routineCustom";
 import { Exercise } from "../models/exercise";
 import { Router } from "@angular/router";
+import { ExerciseService } from '../services/exercise/exercise.service';
 
 @Component({
 	selector: "app-custom-routine",
@@ -11,7 +12,8 @@ import { Router } from "@angular/router";
 	styleUrls: ["./custom-routine.component.css"],
 })
 export class CustomRoutineComponent implements OnInit {
-	exercisesList: Array<Exercise> = (exercisesJson as any).default;
+	// exercisesList: Array<Exercise> = (exercisesJson as any).default;
+	exercisesList: Array<Exercise> = new Array<Exercise>();
 
 	myRoutine: Array<MyRoutine> = [];
 
@@ -23,12 +25,15 @@ export class CustomRoutineComponent implements OnInit {
 		exerciseName: new FormControl(""),
 	});
 
-	constructor(private router: Router) {}
+	constructor(private router: Router, private ExerciseApi: ExerciseService) {}
 
 	ngOnInit(): void {
-		this.exerciseFormGroup.controls["reps"].setValue(6);
-		this.exerciseFormGroup.controls["timeRemaining"].setValue(30);
-		this.exerciseFormGroup.controls["exerciseName"].setValue("PUSH-UPS");
+
+
+		this.ExerciseApi.getExerciseAll().subscribe((exerciseListApi)=>{
+			this.exercisesList = exerciseListApi;
+		  })
+
 	}
 
 	onSubmit() {

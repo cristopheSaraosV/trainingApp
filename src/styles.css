@@ -97,8 +97,3 @@
 #f05454 
 */
 
-@media screen and (max-width: 1655px) {
-    .mt-5 { 
-        margin-top: none !important
-    }
-}

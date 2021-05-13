@@ -19,7 +19,6 @@ export class ParksComponent implements OnInit {
   ngOnInit(): void {
     
     this.ParkApi.getParkAll().subscribe((parksListApi) =>{
-      console.log(this.parksList);
       this.parksList = parksListApi
     })
   }

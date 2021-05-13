@@ -1,26 +1,26 @@
-<div   class="mt-3 text-center">
-    <h1   class="display-5">        
-        <span  *ngIf="previousTraining<=0" class="badge  bg-orange display-5">            
-            {{break}}
-        </span>
-        <span *ngIf="previousTraining>0" class="badge  bg-orange display-5">            
-            PREVIOUS TRAINING {{previousTraining }}
-        </span>
-    </h1>
-    <h1 class="display-1">
-        {{myRoutine.exercise }} x {{myRoutine.reps}}
-    </h1>
-    <h1 *ngIf="!statusTraining" >        
-        LET'S START <br>
-        <a (click)="startRoutine()" class="btn-lg btn-orange m-3 bg-blue-dark display-5">
-                START 
-        </a>
-        <span  *ngIf="statusTraining" class="badge m-3 bg-blue-dark display-5">
-            NEXT EXERCISE 
-        </span>
-    </h1>
-   
-    <button  *ngIf="myRoutine.timeRemaining!==0" class="btn-sm mb-2 mt-2 btn-orange">
-        +30s
-    </button>
+<div *ngIf="isCompleted === false" class="mt-3 text-center">
+	<h1 class="display-5">
+		<span *ngIf="previousTraining <= 0" class="badge bg-orange display-5">
+			{{ break }}
+		</span>
+		<span *ngIf="previousTraining > 0" class="badge bg-orange display-5">
+			PREVIOUS TRAINING {{ previousTraining }}
+		</span>
+	</h1>
+	<h1 class="display-1">{{ myRoutine.exercise }} x {{ myRoutine.reps }}</h1>
+	<h1 *ngIf="!statusTraining">
+		LET'S START <br />
+		<a (click)="startRoutine()" class="btn-lg btn-orange m-3 bg-blue-dark display-5">
+			START
+		</a>
+		<span *ngIf="statusTraining" class="badge m-3 bg-blue-dark display-5">
+			NEXT EXERCISE
+		</span>
+	</h1>
+</div>
+
+<div *ngIf="isCompleted === true" class="mt-3 text-center">
+	<h1 class="display-5">
+		Finished routine
+	</h1>
 </div>
