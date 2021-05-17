@@ -10,7 +10,7 @@ import { ParkService } from '../services/park/park.service'
   templateUrl: './parks.component.html',
   styleUrls: ['./parks.component.css'],
 })
-export class ParksComponent implements OnInit {
+export class ParksComponent implements OnInit  {
   // parksList: Array<Park> = (parksJson as any).default
   parksList: Array<Park> = new Array<Park>();
 
