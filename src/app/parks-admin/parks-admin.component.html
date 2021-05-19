@@ -1,7 +1,7 @@
 <div class="text-white">
 	<h2 class="mb-4 display-6">PARKS</h2>
 
-	<a class="btn-sm btn-orange mb-3 text-white" href="">ADD</a>
+	<a class="btn-sm btn-orange mb-3 text-white" data-bs-toggle="modal" data-bs-target="#parksModal">ADD</a>
 	<div class="table-responsive">
 		<table class="table table-secondary table-hover table-borderless">
 			<thead>
@@ -49,13 +49,13 @@
                         {{park.region}}
                     </td>
                     <td>
-                        <a class="btn btn-warning" href="{{ park.urlDirection}}">GO TO THE PARK</a>                       
+                        <a class="btn btn-warning"  href="{{ park.urlDirection}}">GO TO THE PARK</a>                       
                     </td> 
 					<td>
-						<a class="btn-sm btn-blue mx-2 mb-2" href="">EDIT</a>
+						<a class="btn-sm btn-blue mx-2 mb-2" >EDIT</a>
 					</td>
 					<td>
-						<a class="btn-sm btn-orange mb-2" href="">DELETE</a>
+						<a class="btn-sm btn-orange mb-2" >DELETE</a>
 					</td>
 				</tr>
 			
@@ -72,3 +72,42 @@
 		</table>
 	</div>
 </div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="parksModal"  data-bs-backdrop="static" tabindex="-1" aria-labelledby="mapsModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="mapsModalLabel">Add Park</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<form>
+		<div class="modal-body">
+				<div class="mb-3">
+				  <label for="txtName" class="form-label">Name</label>
+				  <input type="text" class="form-control" id="txtName" aria-describedby="namelHelp">
+				</div>
+				<div class="mb-3">
+				  <label for="txtCity" class="form-label">City</label>
+				  <input type="text" class="form-control" id="txtCity" aria-describedby="citylHelp">
+				</div>
+				<div class="mb-3">
+				  <label for="txtRegion" class="form-label">Region</label>
+				  <input type="text" class="form-control" id="txtRegion" aria-describedby="regionlHelp">
+				</div>
+				<div class="mb-3">
+				  <label for="txtMap" class="form-label">Map</label>
+				  <input type="text" class="form-control" id="txtMap" aria-describedby="maplHelp">
+				</div>
+			
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn-sm btn-blue" data-bs-dismiss="modal">Close</button>
+				<button type="submit" class="btn-sm btn-orange text-white">Save changes</button>
+			</div>
+		</form>
+	  </div>
+	</div>
+  </div>

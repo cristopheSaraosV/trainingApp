@@ -1,7 +1,7 @@
 <div class="text-white">
 	<h2 class="mb-4 display-6">Exercises</h2>
 
-	<a class="btn-sm btn-orange mb-3 text-white" href="">ADD</a>
+	<a class="btn-sm btn-orange mb-3 text-white" data-bs-toggle="modal" data-bs-target="#ExerciseModal">ADD</a>
 	<div class="table-responsive">
 		<table class="table table-secondary table-hover table-borderless">
 			<thead>
@@ -41,10 +41,10 @@
 						{{exercise.description}}
 					</td>
 					<td>
-						<a class="btn-sm btn-blue mx-2 mb-2" href="">EDIT</a>
+						<a class="btn-sm btn-blue mx-2 mb-2" >EDIT</a>
 					</td>
 					<td>
-						<a class="btn-sm btn-orange mb-2" href="">DELETE</a>
+						<a class="btn-sm btn-orange mb-2" >DELETE</a>
 					</td>
 				</tr>
 			
@@ -61,3 +61,31 @@
 		</table>
 	</div>
 </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="ExerciseModal"  data-bs-backdrop="static" tabindex="-1" aria-labelledby="exercisesModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exercisesModalLabel">Add Exercise</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<form>
+		<div class="modal-body">
+				<div class="mb-3">
+				  <label for="txtName" class="form-label">Name</label>
+				  <input type="text" class="form-control" id="txtName" aria-describedby="namelHelp">
+				</div>
+				<div class="mb-3">
+				  <label for="txtCity" class="form-label">Description</label>
+				  <input type="text" class="form-control" id="txtCity" aria-describedby="citylHelp">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn-sm btn-blue" data-bs-dismiss="modal">Close</button>
+				<button type="submit" class="btn-sm btn-orange text-white">Save changes</button>
+			</div>
+		</form>
+	  </div>
+	</div>
+  </div>
