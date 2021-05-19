@@ -52,6 +52,8 @@ body{
     border:none;
    
 }
+
+
 .btn-blue{
     background-color: #30475e ;
     text-decoration: none;
@@ -102,7 +104,11 @@ body{
     background-color:#1a1a1a
 }
 
-
+input:focus{
+    border-color: #f05454 !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #f05454 !important;
+    outline: 0 none !important;
+}
 
 /* Colors
 #dddddd

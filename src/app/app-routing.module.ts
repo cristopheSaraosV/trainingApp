@@ -11,6 +11,7 @@ import { TrainingRoomComponent } from './training-room/training-room.component'
 import { HomeAdminComponent } from './home-admin/home-admin.component'
 import { ExercisesAdminComponent } from './exercises-admin/exercises-admin.component'
 import { ParksAdminComponent } from './parks-admin/parks-admin.component'
+import { LoginAdminComponent } from './login-admin/login-admin.component'
 
 const routes: Routes = [
   {
@@ -58,19 +59,26 @@ const routes: Routes = [
     ],
   },
   {
-    path:'home-admin',
-    component:HomeAdminComponent,
+    path:'login',
+    component:LoginAdminComponent,
     children:[
       {
-        path: 'exercises',
-        component: ExercisesAdminComponent
-      },
-      {
-        path: 'parks',
-        component: ParksAdminComponent
+        path:'home-admin',
+        component:HomeAdminComponent,
+        children:[
+          {
+            path: 'exercises',
+            component: ExercisesAdminComponent
+          },
+          {
+            path: 'parks',
+            component: ParksAdminComponent
+          }
+        ]
       }
+
     ]
-  }
+  },
 ]
 
 @NgModule({
