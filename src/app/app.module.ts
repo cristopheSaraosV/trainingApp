@@ -16,6 +16,8 @@ import { TrainingRoomComponent } from './training-room/training-room.component';
 import { HttpClientModule } from '@angular/common/http'
 import { ParkService } from './services/park/park.service';
 import { ExerciseService } from './services/exercise/exercise.service';
+import { HomeAdminComponent } from './home-admin/home-admin.component';
+import { ExercisesAdminComponent } from './exercises-admin/exercises-admin.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ExerciseService } from './services/exercise/exercise.service';
     ParksComponent,
     HomeRoutinesComponent,
     CustomRoutineComponent,
-    TrainingRoomComponent
+    TrainingRoomComponent,
+    HomeAdminComponent,
+    ExercisesAdminComponent
   ],
   imports:[
     [

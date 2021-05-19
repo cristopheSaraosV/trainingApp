@@ -8,6 +8,8 @@ import { RoutinesComponent } from './routines/routines.component'
 import { HomeRoutinesComponent } from './home-routines/home-routines.component'
 import { CustomRoutineComponent } from './custom-routine/custom-routine.component'
 import { TrainingRoomComponent } from './training-room/training-room.component'
+import { HomeAdminComponent } from './home-admin/home-admin.component'
+import { ExercisesAdminComponent } from './exercises-admin/exercises-admin.component'
 
 const routes: Routes = [
   {
@@ -54,6 +56,16 @@ const routes: Routes = [
       }
     ],
   },
+  {
+    path:'home-admin',
+    component:HomeAdminComponent,
+    children:[
+      {
+        path: 'exercises',
+        component: ExercisesAdminComponent
+      }
+    ]
+  }
 ]
 
 @NgModule({

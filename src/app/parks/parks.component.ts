@@ -21,5 +21,7 @@ export class ParksComponent implements OnInit  {
     this.ParkApi.getParkAll().subscribe((parksListApi) =>{
       this.parksList = parksListApi
     })
+
   }
 }
+
