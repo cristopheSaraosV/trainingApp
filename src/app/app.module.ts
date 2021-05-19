@@ -18,6 +18,7 @@ import { ParkService } from './services/park/park.service';
 import { ExerciseService } from './services/exercise/exercise.service';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { ExercisesAdminComponent } from './exercises-admin/exercises-admin.component';
+import { ParksAdminComponent } from './parks-admin/parks-admin.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ExercisesAdminComponent } from './exercises-admin/exercises-admin.compo
     CustomRoutineComponent,
     TrainingRoomComponent,
     HomeAdminComponent,
-    ExercisesAdminComponent
+    ExercisesAdminComponent,
+    ParksAdminComponent
   ],
   imports:[
     [

@@ -67,6 +67,21 @@ body{
     color: #dddddd;    
     border:none;   
 }
+.btn-blue-dark{
+    background-color: #222831 ;
+    text-decoration: none;
+    display: inline-block;
+    color: #dddddd;
+    text-align: center;
+    vertical-align: middle;   
+    border:none; 
+}
+.btn-blue-dark:hover{
+    background-color: #1d2329 ;
+    text-decoration: none;
+    color: #dddddd;    
+    border:none;   
+}
 
 .btn-sm{
 

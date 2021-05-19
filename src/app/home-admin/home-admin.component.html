@@ -1,20 +1,37 @@
 <div class="container-fluid text-white">
 	<div class="container">
 		<div class="row">
-            <div class="col-sm-12">
-                <h1 class="display-4 mt-4">DASHBOARD</h1>
-            </div>
 			<div class="col-sm-12">
-
-				<ul class="nav bg-blue mt-4 mb-4">
-					<li class="nav-item btn-sm">
+				<h1 class="display-4 mt-4">DASHBOARD</h1>
+			</div>
+			<div class="col-sm-12">
+				<ul class="nav  mt-4 mb-4 list-unstyledk bg-blue p-3 ">
+					<li class="mx-1  text-white">
 						<a
-							routerLinkActive="btn-orange"
+							routerLink="/home/trainer"
+							class="btn-sm text-white btn-secondary"
+							aria-current="page"
+							>BACK
+						</a>
+					</li>
+					<li class="mx-1   text-white">
+						<a
 							routerLink="/home-admin/exercises"
-							class="nav-link"
+							routerLinkActive="btn-orange "
+							class="btn-sm text-white"
 							aria-current="page"
 							>EXERCISES
 						</a>
+					</li>
+					<li class="mx-1  ">
+						<a
+						routerLink="/home-admin/parks"
+						routerLinkActive="btn-orange"
+						class=" btn-sm text-white"
+						aria-current="page"
+						>PARKS
+						</a>
+						
 					</li>
 				</ul>
 			</div>

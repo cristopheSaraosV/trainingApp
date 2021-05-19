@@ -10,6 +10,7 @@ import { CustomRoutineComponent } from './custom-routine/custom-routine.componen
 import { TrainingRoomComponent } from './training-room/training-room.component'
 import { HomeAdminComponent } from './home-admin/home-admin.component'
 import { ExercisesAdminComponent } from './exercises-admin/exercises-admin.component'
+import { ParksAdminComponent } from './parks-admin/parks-admin.component'
 
 const routes: Routes = [
   {
@@ -63,6 +64,10 @@ const routes: Routes = [
       {
         path: 'exercises',
         component: ExercisesAdminComponent
+      },
+      {
+        path: 'parks',
+        component: ParksAdminComponent
       }
     ]
   }

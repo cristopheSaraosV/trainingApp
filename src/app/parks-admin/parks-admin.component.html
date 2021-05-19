@@ -1,5 +1,5 @@
 <div class="text-white">
-	<h2 class="mb-4 display-6">Exercises</h2>
+	<h2 class="mb-4 display-6">PARKS</h2>
 
 	<a class="btn-sm btn-orange mb-3 text-white" href="">ADD</a>
 	<div class="table-responsive">
@@ -18,13 +18,15 @@
 						</div>
 					</th>
 					<th scope="col">NAME</th>
-					<th scope="col">DESCRIPTION</th>
+					<th scope="col">CITY</th>
+					<th scope="col">REGION</th>
+					<th scope="col">MAP</th>
 					<th scope="col"></th>
 					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr *ngFor="let exercise of exercisesList">
+				<tr *ngFor="let park of parksList" >
 					<td>
 						<div class="form-check">
 							<input
@@ -35,11 +37,20 @@
 								checked
 							/>
 						</div>
-					</td>
-					<td>{{exercise.name}}</td>
-					<td>
-						{{exercise.description}}
-					</td>
+					</td>			
+
+                    <td>
+                        {{park.name}}
+                    </td>
+                    <td>
+                        {{park.city}}
+                    </td>
+                    <td>
+                        {{park.region}}
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" href="{{ park.urlDirection}}">GO TO THE PARK</a>                       
+                    </td> 
 					<td>
 						<a class="btn-sm btn-blue mx-2 mb-2" href="">EDIT</a>
 					</td>
@@ -50,13 +61,13 @@
 			
 			</tbody>
 			<tfoot>
-				<tr>
-					<th scope=" text-secondary"></th>
-					<th scope=" text-secondary">NAME</th>
-					<th scope=" text-secondary">DESCRIPTION</th>
-					<th scope=" text-secondary"></th>
-					<th scope=" text-secondary"></th>
-				</tr>
+					<th scope="col"></th>
+					<th scope="col">NAME</th>
+					<th scope="col">CITY</th>
+					<th scope="col">REGION</th>
+					<th scope="col">MAP</th>
+					<th scope="col"></th>
+					<th scope="col"></th>
 			</tfoot>
 		</table>
 	</div>
