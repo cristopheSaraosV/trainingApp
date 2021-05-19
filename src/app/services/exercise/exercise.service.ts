@@ -16,4 +16,20 @@ export class ExerciseService {
     production = "https://api-res-training-app.herokuapp.com/api/exercises"
     return this.http.get<Exercise[]>(production);
   }
+
+  saveExercise(exerciseIn:Exercise): Observable<Exercise> {
+    var local:string,production:string;    
+    local = "/api/exercises"
+    production = "https://api-res-training-app.herokuapp.com/api/exercises"
+    return this.http.post<Exercise>(production,exerciseIn);
+  }
+
+  updateExercise(exerciseIn:Exercise,id:string): Observable<Exercise> {
+    var local:string,production:string;    
+    local = `/api/exercises/${id}`
+    production = `https://api-res-training-app.herokuapp.com/api/exercises/${id}`
+    console.log(production);
+    return this.http.put<Exercise>(production,exerciseIn);
+  }
+
 }
