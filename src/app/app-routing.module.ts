@@ -12,6 +12,7 @@ import { HomeAdminComponent } from './home-admin/home-admin.component'
 import { ExercisesAdminComponent } from './exercises-admin/exercises-admin.component'
 import { ParksAdminComponent } from './parks-admin/parks-admin.component'
 import { LoginAdminComponent } from './login-admin/login-admin.component'
+import { UsersAdminComponent } from './users-admin/users-admin.component'
 
 const routes: Routes = [
   {
@@ -60,24 +61,26 @@ const routes: Routes = [
   },
   {
     path:'login',
-    component:LoginAdminComponent,
+    component:LoginAdminComponent
+  },
+  {
+    path:'home-admin',
+    component:HomeAdminComponent,
     children:[
       {
-        path:'home-admin',
-        component:HomeAdminComponent,
-        children:[
-          {
-            path: 'exercises',
-            component: ExercisesAdminComponent
-          },
-          {
-            path: 'parks',
-            component: ParksAdminComponent
-          }
-        ]
+        path: 'exercises',
+        component: ExercisesAdminComponent
+      },
+      {
+        path: 'parks',
+        component: ParksAdminComponent
+      },
+      {
+        path: 'users',
+        component: UsersAdminComponent
       }
-
     ]
+  
   },
 ]
 

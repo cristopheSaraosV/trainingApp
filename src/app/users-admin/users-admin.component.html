@@ -1,0 +1,135 @@
+<div class="text-white">
+	<h2 class="mb-4 display-6">USERS</h2>
+
+	<a class="btn-sm btn-orange mb-3 text-white" data-bs-toggle="modal" data-bs-target="#userModal">ADD</a>
+	<div class="table-responsive">
+		<table class="table table-secondary table-hover table-borderless">
+			<thead>
+				<tr>
+					<th scope="col">
+						<div class="form-check">
+							<input
+								class="form-check-input"
+								type="checkbox"
+								value=""
+								id="flexCheckChecked"
+								checked
+							/>
+						</div>
+					</th>
+					<th scope="col">NAME</th>
+					<th scope="col">EMAIL</th>
+					<th scope="col">ROL</th>
+					<th scope="col">GOOGLE</th>
+					<th scope="col">STATE</th>
+                    <th></th>
+                    <th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr  *ngFor="let user of userList" >
+					<td>
+						<div class="form-check">
+							<input
+								class="form-check-input"
+								type="checkbox"
+								value=""
+								id="flexCheckChecked"
+								checked
+							/>
+						</div>
+					</td>			
+
+                    <td>
+                      {{  user.name}}
+                    </td>
+                    <td>
+                        {{user.email}}
+                    </td>
+                    <td>
+                        {{user.rol}}
+                    </td>
+
+					<td *ngIf="user.google">
+						<span class="badge bg-success">{{ user.google.toString().toUpperCase() }} </span>    
+					</td> 
+
+					<td *ngIf="!user.google">
+						<span class="badge bg-danger ">{{ user.google.toString().toUpperCase() }}</span>    
+					</td> 
+
+
+                    <td *ngIf="user.state">
+                      <span class="badge bg-success">{{ user.state.toString().toUpperCase() }} </span>    
+                    </td> 
+
+                    <td *ngIf="!user.state">
+                      <span class="badge bg-danger ">{{ user.state.toString().toUpperCase() }}</span>    
+                    </td> 
+
+
+					<td>						
+						<a class="btn-sm btn-blue mx-2 mb-2" >EDIT</a>
+					</td>
+					<td>
+						<a class="btn-sm btn-orange mb-2" >DELETE</a>
+					</td>
+				</tr>
+			
+			</tbody>
+			<tfoot>
+					<th scope="col"></th>
+					<th scope="col">NAME</th>
+					<th scope="col">EMAIL</th>
+					<th scope="col">ROL</th>
+					<th scope="col">GOOGLE</th>
+					<th scope="col">STATE</th>
+			</tfoot>
+		</table>
+	</div>
+</div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="userModal"  data-bs-backdrop="static" tabindex="-1" aria-labelledby="mapsModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="mapsModalLabel">ADD USER</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<form>
+     
+        
+		<div class="modal-body">
+				<div class="mb-3">
+				  <label for="txtName" class="form-label">NAME</label>
+				  <input type="text" class="form-control" id="txtName" aria-describedby="namelHelp">
+                  <div class="mb-3">
+                      <label for="txtEmail" class="form-label">EMAIL</label>
+                      <input type="email" class="form-control" id="txtEmail" aria-describedby="EmailHelp">
+                  </div>
+                  <div class="mb-3">
+                        <label for="txtPassword" class="form-label">PASSWORD</label>
+                        <input type="password" class="form-control" id="txtPassword" aria-describedby="PasswordlHelp">
+                    </div>
+                
+                </div>
+                <div class="mb-3">
+                  <label for="txtRole" class="form-label">ROL</label>
+                  <select class="form-select" aria-label="Rol">
+                    <option value="1">ADMIN</option>
+                    <option value="2">USER</option>
+                  </select>
+                </div>
+			
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn-sm btn-blue" data-bs-dismiss="modal">Close</button>
+				<button type="submit" class="btn-sm btn-orange text-white">Save changes</button>
+			</div>
+		</form>
+	  </div>
+	</div>
+  </div>
