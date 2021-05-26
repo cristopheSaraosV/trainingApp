@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-admin',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeAdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authApi: AuthService, public router: Router) { }
+
+
+  youHavePermision: boolean = false;
 
   ngOnInit(): void {
-  }
+    const token = this.authApi.getToken();
+    if(token.length > 0){
+      this.youHavePermision = true
+    }
 
+  }
+  
+  
+  logout(){
+    this.authApi.logout();
+    this.youHavePermision = false
+  
+  }
 }

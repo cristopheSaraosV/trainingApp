@@ -1,10 +1,10 @@
 <div class="text-white">
-	<h2 class="mb-4 display-6">Exercises</h2>
+	<h2 class="mb-4 display-6">EXERCISES</h2>
 
-	<a class="btn-sm btn-orange mb-3 text-white" data-bs-toggle="modal" (click)="newExercise()" data-bs-target="#ExerciseModal">ADD</a>
+	<a class="btn-sm btn-orange mb-4 text-white" data-bs-toggle="modal" (click)="newExercise()" data-bs-target="#ExerciseModal">ADD</a>
 	<div class="table-responsive">
 		<table class="table table-secondary table-hover table-borderless">
-			<thead>
+			<thead class="table-blue">
 				<tr>
 					<th scope="col">
 						<div class="form-check">
@@ -71,10 +71,16 @@
 		  <h5 class="modal-title" id="exercisesModalLabel" *ngIf="isNew==true">Add Exercise</h5>
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
-		<div *ngIf="exerciseResponse.status==true" class="alert alert-success" role="alert">
+
+		
+		  <div *ngIf="exerciseResponse.status==true" class="alert alert-success" role="alert">
 			{{exerciseResponse.msg}}
-		  </div>		
-		  <form [formGroup]="exerciseFormGroup" (ngSubmit)="isNew == true ? onSubmitNew() : onSubmitEdit()" >
+		  </div>
+		<div *ngIf="exerciseResponse.status==false" class={{classError}} role="alert">
+			{{exerciseResponse.msg}}
+		  </div>
+		
+				  <form [formGroup]="exerciseFormGroup" (ngSubmit)="isNew == true ? onSubmitNew() : onSubmitEdit()" >
 		<div class="modal-body">
 				
 				<div class="mb-3">

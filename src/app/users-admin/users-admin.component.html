@@ -1,11 +1,11 @@
 <div class="text-white">
 	<h2 class="mb-4 display-6">USERS</h2>
 
-	<a class="btn-sm btn-orange mb-3 text-white" data-bs-toggle="modal" data-bs-target="#userModal">ADD</a>
+	<a class="btn-sm btn-orange mb-4 text-white" data-bs-toggle="modal" data-bs-target="#userModal">ADD</a>
 	<div class="table-responsive">
 		<table class="table table-secondary table-hover table-borderless">
-			<thead>
-				<tr>
+			<thead class="table-blue">
+				<tr >
 					<th scope="col">
 						<div class="form-check">
 							<input
@@ -92,35 +92,34 @@
 
   
   <!-- Modal -->
-  <div class="modal fade" id="userModal"  data-bs-backdrop="static" tabindex="-1" aria-labelledby="mapsModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
+  <div class="modal fade  bg-blue" id="userModal"  data-bs-backdrop="static" tabindex="-1" aria-labelledby="mapsModalLabel" aria-hidden="true">
+	<div class="modal-dialog ">
 	  <div class="modal-content">
 		<div class="modal-header">
 		  <h5 class="modal-title" id="mapsModalLabel">ADD USER</h5>
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
-		<form>
+		<form [formGroup]="userFormGroup"  (ngSubmit)="onSubmitNew()">
      
         
 		<div class="modal-body">
 				<div class="mb-3">
 				  <label for="txtName" class="form-label">NAME</label>
-				  <input type="text" class="form-control" id="txtName" aria-describedby="namelHelp">
+				  <input  formControlName="name" type="text" class="form-control" id="txtName" aria-describedby="namelHelp">
                   <div class="mb-3">
                       <label for="txtEmail" class="form-label">EMAIL</label>
-                      <input type="email" class="form-control" id="txtEmail" aria-describedby="EmailHelp">
+                      <input formControlName="email" type="email" class="form-control" id="txtEmail" aria-describedby="EmailHelp">
                   </div>
                   <div class="mb-3">
                         <label for="txtPassword" class="form-label">PASSWORD</label>
-                        <input type="password" class="form-control" id="txtPassword" aria-describedby="PasswordlHelp">
+                        <input formControlName="password" type="password" class="form-control" id="txtPassword" aria-describedby="PasswordlHelp">
                     </div>
                 
                 </div>
                 <div class="mb-3">
                   <label for="txtRole" class="form-label">ROL</label>
-                  <select class="form-select" aria-label="Rol">
-                    <option value="1">ADMIN</option>
-                    <option value="2">USER</option>
+                  <select class="form-select" formControlName="rol" aria-label="Rol">
+                    <option *ngFor="let item of roleslist"  [ngValue]=item._id>{{item.rol}}</option>
                   </select>
                 </div>
 			

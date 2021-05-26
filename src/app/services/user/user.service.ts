@@ -20,4 +20,13 @@ export class UserService {
     production = "https://api-res-training-app.herokuapp.com/api/users"
     return this.http.get<User[]>(production);
   }
+
+  saveUser(userIn:User): Observable<User> {
+    var local:string,production:string;    
+    local = "/api/users"
+    production = "https://api-res-training-app.herokuapp.com/api/users"
+    return this.http.post<User>(production,userIn);
+  }
+  
+
 }

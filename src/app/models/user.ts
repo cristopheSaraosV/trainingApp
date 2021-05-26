@@ -4,6 +4,5 @@ export class User {
 	rol: string;
 	google: boolean;
 	state: boolean;
-	__v: number;
 	uid: string;
 }

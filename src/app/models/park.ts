@@ -1,12 +1,11 @@
 export class Park {
-    id: number;
+    id: string;
     name: string;
     city:  string;
     region:  string;
-    url:  string;
     urlDirection:  string;
     weather:string;
-    temp:number;
+    temp:string;
 
    
   }

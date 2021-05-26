@@ -43,6 +43,16 @@
 						</a>
 						
 					</li>
+					<li class="mx-1 float-end ">
+						<a
+						*ngIf="youHavePermision"
+						(click)="logout()"
+						class=" btn-sm text-white btn-blue-dark"
+						aria-current="page"
+						>LOGOUT
+						</a>
+						
+					</li>
 				</ul>
 			</div>
 		</div>

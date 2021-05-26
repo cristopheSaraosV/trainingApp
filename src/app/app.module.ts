@@ -21,6 +21,7 @@ import { ExercisesAdminComponent } from './exercises-admin/exercises-admin.compo
 import { ParksAdminComponent } from './parks-admin/parks-admin.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { UsersAdminComponent } from './users-admin/users-admin.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { UsersAdminComponent } from './users-admin/users-admin.component';
   ] ,
   providers: [
     ParkService,
-    ExerciseService
+    ExerciseService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

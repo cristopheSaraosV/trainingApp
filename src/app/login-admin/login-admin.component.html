@@ -1,24 +1,24 @@
-<div *ngIf="isHideLogin !== true" class="container  text-white bg-blue-dark mt-5 p-5">
+<div class="container  text-white bg-blue-dark mt-5 p-5">
     <h1 class="display-3">LOGIN ADMIN</h1>
 	<div class="row">
 		<div class="col-sm-12">
-            <form class="bg-blue p-4 mt-3">
+            <form  [formGroup]="userFormGroup" (ngSubmit)="onSubmitNew()" class="bg-blue p-4 mt-3">
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                   <div id="emailHelp" class="form-text text-white">We'll never share your email with anyone else.</div>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <input  formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
                 </div>
              
-                <button routerLink="/home-admin/exercises" (click)="hide()" class="btn-sm btn-orange">LOGIN</button>
+                <button type="submit"  class="btn-sm btn-orange">LOGIN</button>
               </form>
         </div>
 	</div>
 </div>
-<div *ngIf="isHideLogin == true">
+<div >
     <router-outlet></router-outlet>
 </div>
 

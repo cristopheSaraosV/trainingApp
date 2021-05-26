@@ -104,6 +104,18 @@ body{
     background-color:#1a1a1a
 }
 
+.table-blue{
+    --bs-table-bg: #30475e;
+    --bs-table-striped-bg: #30475e;
+    --bs-table-striped-color: #30475e;
+    --bs-table-active-bg: #30475e;
+    --bs-table-active-color: #30475e;
+    --bs-table-hover-bg: #30475e;
+    --bs-table-hover-color: #222831;
+    color: #fff;
+    border-color: #30475e;
+}
+
 input:focus{
     border-color: #f05454 !important;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #f05454 !important;

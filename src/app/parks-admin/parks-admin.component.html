@@ -1,10 +1,10 @@
 <div class="text-white">
 	<h2 class="mb-4 display-6">PARKS</h2>
 
-	<a class="btn-sm btn-orange mb-3 text-white" data-bs-toggle="modal" data-bs-target="#parksModal">ADD</a>
+	<a class="btn-sm btn-orange mb-4 text-white" (click)="newExercise()" data-bs-toggle="modal" data-bs-target="#parksModal">ADD</a>
 	<div class="table-responsive">
 		<table class="table table-secondary table-hover table-borderless">
-			<thead>
+			<thead class="table-blue">
 				<tr>
 					<th scope="col">
 						<div class="form-check">
@@ -52,7 +52,7 @@
                         <a class="btn btn-warning"  href="{{ park.urlDirection}}">GO TO THE PARK</a>                       
                     </td> 
 					<td>
-						<a class="btn-sm btn-blue mx-2 mb-2" >EDIT</a>
+						<a class="btn-sm btn-blue mx-2 mb-2" data-bs-toggle="modal" data-bs-target="#parksModal" (click)="editPark(park,park._id)" >EDIT</a>
 					</td>
 					<td>
 						<a class="btn-sm btn-orange mb-2" >DELETE</a>
@@ -80,32 +80,41 @@
 	<div class="modal-dialog">
 	  <div class="modal-content">
 		<div class="modal-header">
-		  <h5 class="modal-title" id="mapsModalLabel">Add Park</h5>
+		  <h5 *ngIf="isNew" class="modal-title" id="mapsModalLabel">Add Park</h5>
+		  <h5 *ngIf="!isNew" class="modal-title" id="mapsModalLabel">Edit Park</h5>
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
-		<form>
+		<div *ngIf="parkResponse.status==true" class="alert alert-success" role="alert">
+			{{parkResponse.msg}}
+		  </div>
+		<div *ngIf="parkResponse.status==false" class={{classError}} role="alert">
+			{{parkResponse.msg}}
+		  </div>
+		<form [formGroup]="parkFormGroup" (ngSubmit)="isNew == true ? onSubmitNew() : onSubmitEdit()">
 		<div class="modal-body">
 				<div class="mb-3">
 				  <label for="txtName" class="form-label">Name</label>
-				  <input type="text" class="form-control" id="txtName" aria-describedby="namelHelp">
+				  <input formControlName="name" type="text" class="form-control" id="txtName" value="{{selectedPark.name}}" aria-describedby="namelHelp" >
 				</div>
 				<div class="mb-3">
 				  <label for="txtCity" class="form-label">City</label>
-				  <input type="text" class="form-control" id="txtCity" aria-describedby="citylHelp">
+				  <input formControlName="city" type="text" class="form-control" id="txtCity"  value="{{selectedPark.city}}" aria-describedby="citylHelp">
 				</div>
 				<div class="mb-3">
 				  <label for="txtRegion" class="form-label">Region</label>
-				  <input type="text" class="form-control" id="txtRegion" aria-describedby="regionlHelp">
+				  <input formControlName="region" type="text" class="form-control" id="txtRegion"  value="{{selectedPark.region}}" aria-describedby="regionlHelp">
 				</div>
+
 				<div class="mb-3">
-				  <label for="txtMap" class="form-label">Map</label>
-				  <input type="text" class="form-control" id="txtMap" aria-describedby="maplHelp">
+				  <label for="txtUrlDirection" class="form-label">URL of the address</label>
+				  <input formControlName="urlDirection" type="text" class="form-control" id="txtUrlDirection"  value="{{selectedPark.urlDirection}}" aria-describedby="urlDirectionlHelp">
 				</div>
+			
 			
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn-sm btn-blue" data-bs-dismiss="modal">Close</button>
-				<button type="submit" class="btn-sm btn-orange text-white">Save changes</button>
+				<button type="submit" class="btn-sm btn-orange text-white" *ngIf="parkResponse.status==false">Save changes</button>
 			</div>
 		</form>
 	  </div>

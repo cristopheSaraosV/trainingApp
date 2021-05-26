@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from "@angular/forms";
+import { AuthService } from '../services/auth/auth.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login-admin',
@@ -7,14 +11,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginAdminComponent implements OnInit {
 
-  isHideLogin:boolean = false
-  constructor() { }
+  constructor(private authApi: AuthService, public router: Router) { }
 
-  ngOnInit(): void {
-  }
+  
+  userFormGroup = new FormGroup({
+		email: new FormControl(""),
+		password: new FormControl(""),
+	});
 
-  hide(){
-    this.isHideLogin =true
-  }
+  ngOnInit(): void { }
+
+  
+  onSubmitNew(){
+
+    const UserIn = {
+      email: this.userFormGroup.controls["email"].value,
+      password : this.userFormGroup.controls["password"].value,
+    }
+
+    this.authApi.Login(UserIn).subscribe((loginRes:any)=>{
+      this.authApi.setToken(loginRes.token);
+      this.router.navigateByUrl('/home-admin/exercises');
+
+    })
+
+
+}
+
+
+
 
 }
