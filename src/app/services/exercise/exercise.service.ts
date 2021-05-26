@@ -41,5 +41,18 @@ export class ExerciseService {
 
     return this.http.put<Exercise>(production,exerciseIn,{headers});
   }
+  
+  deleteExercise(id:string, token:string): Observable<Exercise> {
+
+    var local:string,production:string;          
+    let headers = new HttpHeaders();    
+    headers = headers.set('x-token',token );
+    
+
+    local = `/api/exercises/${id}`
+    production = `https://api-res-training-app.herokuapp.com/api/exercises/${id}`
+
+    return this.http.delete<Exercise>(production,{headers});
+  }
 
 }
