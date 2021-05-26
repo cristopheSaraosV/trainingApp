@@ -18,6 +18,7 @@ interface parkResponseI {
 export class ParksAdminComponent implements OnInit {
 
   isNew:Boolean = true;
+	hiddenMsg: boolean = true;
 
   parkResponse:parkResponseI = {
     status:false,
@@ -69,22 +70,35 @@ export class ParksAdminComponent implements OnInit {
 
     this.ParksApi.savePark(ParkIn,token).subscribe((parkRes:any)=>{
 
-        this.parkResponse.status = true;
-        this.parkResponse.msg = "Saved correctly";
+      this.parkResponse.status = true;
+      this.parkResponse.msg = "Saved correctly";
+      this.classError = "alert alert-success";
+
+      this.hiddenMsg = false;
+      setTimeout(() => {
+        this.parkResponse.msg = "";
+        this.classError = "";
+      }, 5000);
+      
         this.clearForm()
       },(errorCather:any) => {
-        errorCather.error.errors.map((item:any) => {
-          this.parkResponse.msg += item.msg + ' || ';
-          this.classError = 'alert alert-danger'
-
-          this.parkResponse.status = false;
-          setTimeout(() =>{
-            this.parkResponse.status = false;
-            this.parkResponse.msg = '';
-            this.classError = '';
-    
-          },5000 )
-      })
+				if (errorCather.error.msg == "Access Token is required") {
+          this.parkResponse.msg = errorCather.error.msg;
+          this.classError = "alert alert-danger";
+				} else {
+					errorCather.error.errors.map((item: any) => {
+						this.hiddenMsg = false;
+            
+						this.parkResponse.msg += item.msg + " || ";
+						this.classError = "alert alert-danger";
+            
+					});
+				}
+        setTimeout(() => {
+          this.hiddenMsg = true;
+          this.parkResponse.msg = "";
+          this.classError = "";
+        }, 5000);
     })
     
   }
@@ -106,6 +120,7 @@ export class ParksAdminComponent implements OnInit {
     this.ParksApi.updatePark(ParkIn,this.selectedPark.id,token).subscribe((exerciseRes:any)=>{
       this.parkResponse.status = true;
       this.parkResponse.msg = "Saved correctly";
+      this.classError = "alert alert-success";
 
       setTimeout(() =>{
         this.parkResponse.status = false;
@@ -115,17 +130,25 @@ export class ParksAdminComponent implements OnInit {
       },3000 )
       
     },(errorCather)=> {
-      errorCather.error.errors.map((item:any) => {
-        this.parkResponse.msg += item.msg + ' || ';
-        this.classError = 'alert alert-danger';
-        this.parkResponse.status = false;
-        setTimeout(() =>{
+     
+				if (errorCather.error.msg == "Access Token is required") {
+          this.parkResponse.msg = errorCather.error.msg;
+          this.classError = "alert alert-danger";
           this.parkResponse.status = false;
-          this.parkResponse.msg = '';
-          this.classError = '';
-  
-        },5000 )
-      })
+				} else {
+					errorCather.error.errors.map((item: any) => {
+						this.hiddenMsg = false;
+
+						this.parkResponse.msg += item.msg + " || ";
+						this.parkResponse.status = false;
+						this.classError = "alert alert-danger";
+
+					});
+				}
+        setTimeout(() => {
+          this.parkResponse.msg = "";
+          this.classError = "";
+        }, 5000);
     })
   }
 
@@ -153,5 +176,7 @@ export class ParksAdminComponent implements OnInit {
     this.parkFormGroup.controls["map"].setValue('');
     this.parkFormGroup.controls["urlDirection"].setValue('');
   }
-
+  showButton() {
+		this.parkResponse.status = false;
+	}
 }

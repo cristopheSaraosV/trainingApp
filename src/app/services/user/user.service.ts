@@ -17,7 +17,7 @@ export class UserService {
   getUsersAll() : Observable<User[]> {
     var local:string,production:string;    
     local = "/api/users"
-    production = "https://api-res-training-app.herokuapp.com/api/users"
+    production = "https://api-res-training-app.herokuapp.com/api/users?limit=10"
     return this.http.get<User[]>(production);
   }
 
