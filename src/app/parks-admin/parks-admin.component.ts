@@ -35,6 +35,7 @@ export class ParksAdminComponent implements OnInit {
     city:"",
     region:"",
     urlDirection:"",
+    urlImg:"",
     id:"",
     weather:"",
     temp:""        
@@ -44,7 +45,8 @@ export class ParksAdminComponent implements OnInit {
     city        :  new FormControl(""),
     region      :  new FormControl(""),
     map         :  new FormControl(""),
-    urlDirection:  new FormControl("")
+    urlDirection:  new FormControl(""),
+    urlImg:  new FormControl("")
 
 	});
 
@@ -61,6 +63,7 @@ export class ParksAdminComponent implements OnInit {
       region : this.parkFormGroup.controls["region"].value,
       map : this.parkFormGroup.controls["map"].value,
       urlDirection : this.parkFormGroup.controls["urlDirection"].value,
+      urlImg : this.parkFormGroup.controls["urlImg"].value,
       weather : '',
       temp : '',
       id : ''
@@ -111,11 +114,16 @@ export class ParksAdminComponent implements OnInit {
       region : this.parkFormGroup.controls["region"].value,
       map : this.parkFormGroup.controls["map"].value,
       urlDirection : this.parkFormGroup.controls["urlDirection"].value,
+      urlImg : this.parkFormGroup.controls["urlImg"].value,
       weather : '',
       temp : '',
       id : this.selectedPark.id
     }
     const token = this.authService.getToken();
+
+    console.log('=============ParkIn================');
+    console.log(ParkIn);
+    console.log('===================================');
 
     this.ParksApi.updatePark(ParkIn,this.selectedPark.id,token).subscribe((exerciseRes:any)=>{
       this.parkResponse.status = true;
@@ -159,6 +167,7 @@ export class ParksAdminComponent implements OnInit {
     this.selectedPark.city =ParkIn.city;
     this.selectedPark.region =ParkIn.region;
     this.selectedPark.urlDirection =ParkIn.urlDirection;
+    this.selectedPark.urlImg =ParkIn.urlImg;
     this.selectedPark.id =ParkIn._id;
 
 
@@ -175,6 +184,7 @@ export class ParksAdminComponent implements OnInit {
     this.parkFormGroup.controls["region"].setValue('');
     this.parkFormGroup.controls["map"].setValue('');
     this.parkFormGroup.controls["urlDirection"].setValue('');
+    this.parkFormGroup.controls["urlImg"].setValue('');
   }
   showButton() {
 		this.parkResponse.status = false;

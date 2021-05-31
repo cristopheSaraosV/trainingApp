@@ -27,6 +27,7 @@
 					<th scope="col">CITY</th>
 					<th scope="col">REGION</th>
 					<th scope="col">MAP</th>
+					<th scope="col">IMG</th>
 					<th scope="col"></th>
 					<th scope="col"></th>
 				</tr>
@@ -53,6 +54,10 @@
 					</td>
 					<td>
 						{{ park.region }}
+					</td>
+					<td>
+						
+						<img src="{{ park.urlImg }}" width="100px"/> 
 					</td>
 					<td>
 						<a class="btn btn-warning" href="{{ park.urlDirection }}"
@@ -182,6 +187,20 @@
 							id="txtUrlDirection"
 							value="{{ selectedPark.urlDirection }}"
 							aria-describedby="urlDirectionlHelp"
+							required
+						/>
+					</div>
+					<div class="mb-3">
+						<label for="txtUrlImg" class="form-label"
+							>URL of the img</label
+						>
+						<input
+							formControlName="urlImg"
+							type="text"
+							class="form-control"
+							id="urlDirectionImglHelp"
+							value="{{ selectedPark.urlImg }}"
+							aria-describedby="urlDirectionImglHelp"
 							required
 						/>
 					</div>

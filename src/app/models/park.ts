@@ -4,8 +4,9 @@ export class Park {
     city:  string;
     region:  string;
     urlDirection:  string;
+    urlImg:  string;
     weather:string;
     temp:string;
-
+    
    
   }
