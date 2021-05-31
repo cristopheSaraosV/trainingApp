@@ -2,6 +2,7 @@
 export interface MyRoutine {
     exercise: string,
     reps: number,
-    timeRemaining: number
+    timeRemaining: number,
+    urlImg: string
   }
   

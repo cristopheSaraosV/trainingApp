@@ -15,6 +15,7 @@ export class TrainingRoomComponent implements OnInit {
 		timeRemaining: 0,
 		exercise: "",
 		reps: 0,
+		urlImg: "",
 	};
 
 	previousTraining: number = 8;
@@ -44,8 +45,9 @@ export class TrainingRoomComponent implements OnInit {
 				this.totalTime--;
 				this.break--;
 				this.myRoutine.exercise = this.myRoutineArray[this.currentRound].exercise;
+				this.myRoutine.urlImg = this.myRoutineArray[this.currentRound].urlImg;
 				this.myRoutine.reps = this.myRoutineArray[this.currentRound].reps;
-
+		
 				if (this.break <= 0 || this.break < 1) {
 					this.break = 38;
 					this.currentRound++;

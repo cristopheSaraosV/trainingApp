@@ -46,13 +46,19 @@ export class CustomRoutineComponent implements OnInit {
 	showRoutinesCustom() {
 		this.trainingRoomStatus = false;
 	}
-	addExercise() {
+	async addExercise() {
+
+
+		const exerciseSelect:any = await this.exercisesList.find( (exercise) => exercise.name == this.exerciseFormGroup.controls["exerciseName"].value )
 		this.myRoutine.push({
 			exercise: this.exerciseFormGroup.controls["exerciseName"].value,
 			reps: this.exerciseFormGroup.controls["reps"].value,
 			timeRemaining: this.exerciseFormGroup.controls["timeRemaining"].value,
+			urlImg: exerciseSelect.urlImg,
 		});
+
 	}
+
 
 	sendRoutine() {}
 }

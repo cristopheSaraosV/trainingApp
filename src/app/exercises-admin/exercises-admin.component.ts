@@ -28,6 +28,7 @@ export class ExercisesAdminComponent implements OnInit {
 	selectedEexercise: Exercise = {
 		name: "",
 		description: "",
+		urlImg: "",
 		_id: "",
 	};
 
@@ -36,6 +37,7 @@ export class ExercisesAdminComponent implements OnInit {
 	exerciseFormGroup = new FormGroup({
 		name: new FormControl(""),
 		description: new FormControl(""),
+		urlImg: new FormControl(""),
 	});
 
 	ngOnInit(): void {
@@ -48,6 +50,7 @@ export class ExercisesAdminComponent implements OnInit {
 		const exerciseIn = {
 			name: this.exerciseFormGroup.controls["name"].value,
 			description: this.exerciseFormGroup.controls["description"].value,
+			urlImg: this.exerciseFormGroup.controls["urlImg"].value,
 			_id: "",
 		};
 
@@ -93,6 +96,7 @@ export class ExercisesAdminComponent implements OnInit {
 		const exerciseIn = {
 			name: this.exerciseFormGroup.controls["name"].value,
 			description: this.exerciseFormGroup.controls["description"].value,
+			urlImg: this.exerciseFormGroup.controls["urlImg"].value,
 			_id: this.selectedEexercise._id,
 		};
 		const token = this.authService.getToken();
@@ -142,21 +146,24 @@ export class ExercisesAdminComponent implements OnInit {
 		this.selectedEexercise.name = exerciseIn.name;
 		this.selectedEexercise.description = exerciseIn.description;
 		this.selectedEexercise._id = exerciseIn._id;
+		this.selectedEexercise.urlImg = exerciseIn.urlImg;
 	}
-
+	
 	newExercise() {
 		this.selectedEexercise.name = "";
 		this.selectedEexercise.description = "";
 		this.selectedEexercise._id = "";
-
+		this.selectedEexercise.urlImg = "";
+		
 		this.isNew = true;
 	}
-
+	
 	deleteExercise(exerciseIn: any, id: string) {
 		const token = this.authService.getToken();
 		this.selectedEexercise.name = exerciseIn.name;
 		this.selectedEexercise.description = exerciseIn.description;
 		this.selectedEexercise._id = exerciseIn._id;
+		this.selectedEexercise.urlImg = exerciseIn.urlImg;
 	}
 
 	showButton() {

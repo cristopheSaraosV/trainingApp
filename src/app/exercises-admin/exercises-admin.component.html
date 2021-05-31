@@ -25,6 +25,7 @@
 					</th>
 					<th scope="col">NAME</th>
 					<th scope="col">DESCRIPTION</th>
+					<th scope="col">IMG</th>
 					<th scope="col"></th>
 					<th scope="col"></th>
 				</tr>
@@ -43,8 +44,9 @@
 						</div>
 					</td>
 					<td>{{ exercise.name }}</td>
+					<td>{{ exercise.description }}</td>
 					<td>
-						{{ exercise.description }}
+						<img src="{{ exercise.urlImg }}" width="100px" alt="{{ exercise.name }}">
 					</td>
 					<td>
 						<a
@@ -72,6 +74,7 @@
 					<th scope=" text-secondary"></th>
 					<th scope=" text-secondary">NAME</th>
 					<th scope=" text-secondary">DESCRIPTION</th>
+					<th scope=" text-secondary">IMG</th>
 					<th scope=" text-secondary"></th>
 					<th scope=" text-secondary"></th>
 				</tr>
@@ -87,7 +90,7 @@
 	data-bs-backdrop="static"
 	tabindex="-1"
 	aria-labelledby="exercisesModalLabel"
-	aria-hidden="true"
+	aria-hidd en="true"
 >
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -149,6 +152,19 @@
 							id="txtDescription"
 							aria-describedby="DescriptionHelp"
 							value="{{ selectedEexercise.description }}"
+						/>
+					</div>
+					<div class="mb-3">
+						<label for="txtUrlImg" class="form-label"
+							>Url IMG</label
+						>
+						<input
+							formControlName="urlImg"
+							type="text"
+							class="form-control"
+							id="txtUrlImg"
+							aria-describedby="urlImgHelp"
+							value="{{ selectedEexercise.urlImg }}"
 						/>
 					</div>
 				</div>
