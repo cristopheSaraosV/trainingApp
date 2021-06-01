@@ -26,6 +26,7 @@ export class HomeAdminComponent implements OnInit {
   logout(){
     this.authApi.logout();
     this.youHavePermision = false
+    this.router.navigateByUrl('/home/trainer')
   
   }
 }

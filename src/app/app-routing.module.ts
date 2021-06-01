@@ -13,6 +13,7 @@ import { ExercisesAdminComponent } from './exercises-admin/exercises-admin.compo
 import { ParksAdminComponent } from './parks-admin/parks-admin.component'
 import { LoginAdminComponent } from './login-admin/login-admin.component'
 import { UsersAdminComponent } from './users-admin/users-admin.component'
+import { AuthGuard } from './auth.guard'
 
 const routes: Routes = [
   {
@@ -66,17 +67,21 @@ const routes: Routes = [
   {
     path:'home-admin',
     component:HomeAdminComponent,
+    canActivate:[AuthGuard],
     children:[
       {
         path: 'exercises',
+        canActivate:[AuthGuard],
         component: ExercisesAdminComponent
       },
       {
         path: 'parks',
+        canActivate:[AuthGuard],
         component: ParksAdminComponent
       },
       {
         path: 'users',
+        canActivate:[AuthGuard],
         component: UsersAdminComponent
       }
     ]

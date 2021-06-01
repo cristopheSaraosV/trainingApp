@@ -36,9 +36,13 @@ export class AuthService {
     const token = this.getToken();
     return token;
   }
+
+  isLoggedIn(){
+    const cookieExists: boolean = this.cookies.check('token');
+    return cookieExists
+  }
   
   logout() {
-    this.cookies.set("token", '' );
     return this.cookies.delete("token");
   }
 
