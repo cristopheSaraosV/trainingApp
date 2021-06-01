@@ -157,6 +157,8 @@ export class ExercisesAdminComponent implements OnInit {
 		
 		this.isNew = true;
 	}
+
+
 	
 	deleteExercise(exerciseIn: any, id: string) {
 		const token = this.authService.getToken();

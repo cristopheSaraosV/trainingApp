@@ -121,11 +121,9 @@ export class ParksAdminComponent implements OnInit {
     }
     const token = this.authService.getToken();
 
-    console.log('=============ParkIn================');
-    console.log(ParkIn);
-    console.log('===================================');
 
-    this.ParksApi.updatePark(ParkIn,this.selectedPark.id,token).subscribe((exerciseRes:any)=>{
+
+    this.ParksApi.updatePark(ParkIn,this.selectedPark.id,token).subscribe((parksRes:any)=>{
       this.parkResponse.status = true;
       this.parkResponse.msg = "Saved correctly";
       this.classError = "alert alert-success";
@@ -160,7 +158,7 @@ export class ParksAdminComponent implements OnInit {
     })
   }
 
-  editPark(ParkIn:any){
+  editOrDeletePark(ParkIn:any){
    
     this.isNew= false;   
     this.selectedPark.name =ParkIn.name;
@@ -169,15 +167,56 @@ export class ParksAdminComponent implements OnInit {
     this.selectedPark.urlDirection =ParkIn.urlDirection;
     this.selectedPark.urlImg =ParkIn.urlImg;
     this.selectedPark.id =ParkIn._id;
-
-
   }
+
+  onSubmitDelete(){
+
+    const ParkID = this.selectedPark.id
+    const token = this.authService.getToken();
+
+		this.ParksApi.deletePark(ParkID, token).subscribe(
+			(parksRes: any) => {
+				if (parksRes.status) {
+					this.parkResponse.status = true;
+					this.parkResponse.msg = parksRes.msg;
+					this.classError = "";
+					setTimeout(() => {
+						this.parkResponse.msg = "";
+						this.classError = "";
+					}, 3000);
+				}
+        
+			},
+			(errorCather: any) => {
+        if (errorCather.error.msg == "Access Token is required") {
+          this.parkResponse.msg = errorCather.error.msg;
+          this.classError = "alert alert-danger";
+				} else {
+					errorCather.error.errors.map((item: any) => {
+						this.hiddenMsg = false;
+
+						this.parkResponse.msg += item.msg + " || ";
+						this.parkResponse.status = false;
+						this.classError = "alert alert-danger";
+
+					});
+				}
+        setTimeout(() => {
+          this.parkResponse.msg = "";
+          this.classError = "";
+        }, 3000);
+			}
+		);
+  }
+
+  
   newExercise(){
-    
     this.clearForm();
     this.isNew= true;  
   }
   
+
+
   clearForm(){
     this.parkFormGroup.controls["name"].setValue('');
     this.parkFormGroup.controls["city"].setValue('');

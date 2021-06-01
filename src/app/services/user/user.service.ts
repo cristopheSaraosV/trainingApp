@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../../models/user';
 
@@ -21,11 +21,15 @@ export class UserService {
     return this.http.get<User[]>(production);
   }
 
-  saveUser(userIn:User): Observable<User> {
-    var local:string,production:string;    
+  saveUser(userIn:User,token:string): Observable<User> {
+    var local:string,production:string; 
+
+    let headers = new HttpHeaders();    
+    headers = headers.set('x-token',token );
     local = "/api/users"
     production = "https://api-res-training-app.herokuapp.com/api/users"
-    return this.http.post<User>(production,userIn);
+
+    return this.http.post<User>(production,userIn,{headers});
   }
   
 

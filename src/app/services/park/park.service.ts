@@ -39,5 +39,17 @@ export class ParkService {
 		production = `https://api-res-training-app.herokuapp.com/api/parks/${id}`
 	
 		return this.http.put<Park>(production,parkIn,{headers});
-	  }
+	}
+	deletePark(id:string, token:string): Observable<Park> {
+
+		var local:string,production:string;    
+	
+		let headers = new HttpHeaders();
+		headers = headers.set('x-token',token );
+	
+		local = `/api/exercises/${id}`
+		production = `https://api-res-training-app.herokuapp.com/api/parks/${id}`
+	
+		return this.http.delete<Park>(production,{headers});
+	}
 }

@@ -5,4 +5,5 @@ export class User {
 	google: boolean;
 	state: boolean;
 	uid: string;
+	password: string;
 }
