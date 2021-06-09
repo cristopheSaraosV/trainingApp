@@ -3,7 +3,6 @@ export class User {
 	email: string;
 	rol: string;
 	google: boolean;
-	state: boolean;
 	uid: string;
 	password: string;
 }

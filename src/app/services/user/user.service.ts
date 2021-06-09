@@ -31,6 +31,19 @@ export class UserService {
 
     return this.http.post<User>(production,userIn,{headers});
   }
+
+  deleteUser(id:string, token:string): Observable<User> {
+
+		var local:string,production:string;    
+	
+		let headers = new HttpHeaders();
+		headers = headers.set('x-token',token );
+	
+		local = `/api/users/${id}`
+		production = `https://api-res-training-app.herokuapp.com/api/users/${id}`
+	
+		return this.http.delete<User>(production,{headers});
+	}
   
 
 }

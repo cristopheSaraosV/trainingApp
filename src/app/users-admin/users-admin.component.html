@@ -47,7 +47,7 @@
                         {{user.email}}
                     </td>
                     <td>
-                        {{user.rol}}
+                        {{ (user.rol).split('_')[0] }}
                     </td>
 
 					<td *ngIf="user.google">
@@ -69,10 +69,10 @@
 
 
 					<td>						
-						<a class="btn-sm btn-blue mx-2 mb-2" data-bs-toggle="modal" (click)="editExercise(user,user._id)" data-bs-target="#userModal" >EDIT</a>
+						<a class="btn-sm btn-blue mx-2 mb-2" data-bs-toggle="modal" (click)="editUser(user,user._id)" data-bs-target="#userModal" >EDIT</a>
 					</td>
 					<td>
-						<a class="btn-sm btn-orange mb-2" >DELETE</a>
+						<a class="btn-sm btn-orange mb-2" data-bs-target="#usersModalDelete"   (click)="deleteUser(user,user._id)"  data-bs-toggle="modal" >DELETE</a>
 					</td>
 				</tr>
 			
@@ -116,7 +116,7 @@
 				{{ userResponse.msg }}
 			</div>
 
-		<form [formGroup]="userFormGroup"  (ngSubmit)="onSubmitNew()">
+		<form [formGroup]="userFormGroup"  (ngSubmit)="isNew ? onSubmitNew() : onSubmitEdit()">
      
         
 		<div class="modal-body">
@@ -134,28 +134,87 @@
 					<input formControlName="password" type="password" class="form-control" id="txtPassword" aria-describedby="PasswordHelp">
 				</div>
 			
-				<div class="mb-3 mt-3">
-					<div class="form-check">
-						<input  formControlName="state" class="form-check-input" type="checkbox"  checked={{selectedUser.state}}  id="flexCheckState">
-						<label class="form-check-label" for="flexCheckState">
-						  STATE
-						</label>
-					  </div>
-				</div>
+			
 			
                 <div class="mb-3">
                   <label for="txtRole" class="form-label">ROL</label>
                   <select class="form-select" formControlName="rol" aria-label="Rol">
-                    <option *ngFor="let item of roleslist"  [ngValue]=item._id>{{item.rol}}</option>
+                    <option *ngFor="let item of roleslist"   [ngValue]=item.rol>{{ (item.rol).split('_')[0] }}</option>
                   </select>
                 </div>
 			
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn-sm btn-blue" data-bs-dismiss="modal">Close</button>
-				<button type="submit" class="btn-sm btn-orange text-white">Save changes</button>
+				<button type="submit" class="btn-sm btn-orange text-white" *ngIf="!userResponse.status">Save changes</button>
 			</div>
 		</form>
 	  </div>
 	</div>
   </div>
+
+
+  <!-- Modal delete -->
+  <div
+	class="modal fade bg-blue"
+	id="usersModalDelete"
+	data-bs-backdrop="static"
+	tabindex="-1"
+	aria-labelledby="mapsModalLabel"
+	aria-hidden="true"
+>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5  class="modal-title" id="mapsModalLabel">Delete Users</h5>
+				<button
+					type="button"
+					class="btn-close"
+					data-bs-dismiss="modal"
+					aria-label="Close"
+				></button>
+			</div>
+			
+			<div
+				*ngIf="!hiddenMsg"
+				class="alert alert-success"
+				role="alert"
+			>
+				{{ userResponse.msg }}
+			</div>
+			<div
+				*ngIf="hiddenMsg"
+				class="{{ classError }}"
+				role="alert"
+			>
+				{{ userResponse.msg }}
+			</div>
+			
+	
+			
+				<div class="modal-body">
+					<ul class='list-group list-group-flush'>
+						<li class="list-group-item"> <strong>Name</strong> {{selectedUser.name}}</li>
+						<li class="list-group-item"> <strong>Email</strong> {{selectedUser.email}}</li>
+						<li class="list-group-item"> <strong>Rol</strong> {{selectedUser.rol}}</li>
+					</ul>	
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn-sm btn-blue" 
+					data-bs-dismiss="modal">
+					<!-- (click)="showButton()" -->
+					Close
+				</button>
+					<button
+						type="submit"
+						(click)="onSubmitDelete()"
+						class="btn-sm btn-orange text-white"
+						*ngIf="userResponse.status == false"
+					>
+						Delete
+					</button>
+				</div>
+		</div>
+	</div>
+</div>

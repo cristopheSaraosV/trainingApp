@@ -13,6 +13,7 @@ export class LoginAdminComponent implements OnInit {
 
   constructor(private authApi: AuthService, public router: Router) { }
 
+  isValid:boolean = true;
   
   userFormGroup = new FormGroup({
 		email: new FormControl(""),
@@ -32,6 +33,9 @@ export class LoginAdminComponent implements OnInit {
     this.authApi.Login(UserIn).subscribe((loginRes:any)=>{
       this.authApi.setToken(loginRes.token);
       this.router.navigateByUrl('/home-admin/exercises');
+      this.isValid = true;
+    }, (error) => {
+      this.isValid = false;
 
     })
 
