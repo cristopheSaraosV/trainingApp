@@ -60,6 +60,8 @@ export class ExercisesAdminComponent implements OnInit {
 			(exerciseRes: any) => {
 				if (exerciseRes.status) {
 					this.hiddenMsg = false;
+					this.classError = "alert alert-success";
+
 					this.exerciseResponse.msg = exerciseRes.msg;
 					this.exerciseResponse.status = true;
 				}
@@ -108,6 +110,8 @@ export class ExercisesAdminComponent implements OnInit {
 		).subscribe(
 			(exerciseRes: any) => {
 				if (exerciseRes.status) {
+					this.classError = "alert alert-success";
+
 					this.exerciseResponse.msg = exerciseRes.msg;
 					this.exerciseResponse.status = true;
 					this.hiddenMsg = false;
@@ -176,6 +180,7 @@ export class ExercisesAdminComponent implements OnInit {
 		this.ExerciseApi.deleteExercise(this.selectedEexercise._id, token).subscribe(
 			(exerciseRes: any) => {
 				if (exerciseRes.status) {
+					this.classError = "alert alert-success";
 					this.exerciseResponse.status = true;
 					this.exerciseResponse.msg = exerciseRes.msg;
 					this.classError = "";
